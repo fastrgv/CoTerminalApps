@@ -40,16 +40,16 @@ First, one selects a vehicle by typing its identifier letter.  Then use the arro
 
 ===============================================================
 ## Build Instructions (Linux and OSX):
-1) Manually install GNAT GPL 2016 from libre.adacore.com/download/
-2) Insure gnatmake is in searchpath. (echo $PATH).
-3) Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
-4) Compile crush by typing "ocmp.sh" for OSX, or "lcmp.sh" for linux, to create a command-line executable for your system.  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
+* Manually install GNAT GPL 2016 from libre.adacore.com/download/
+* Insure gnatmake is in searchpath. (echo $PATH).
+* Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
+* Compile crush by typing "ocmp.sh" for OSX, or "lcmp.sh" for linux, to create a command-line executable for your system.  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
 
 
 ## Preparing GnatColl Libraries
-1) Download GNATCOLL from libre.adacore.com/download/
-2) Build gnatcoll, but do not install.  Even if errors occur, the one library we need may have been correctly generated.  Under ~/src/lib/gnatcoll/relocatable/ you will find newly generated library files with names beginning with "libgnatcoll".  Copy them into ~/libs/SYS/, where SYS is one of {gnu,osx,win}.  Try to preserve the softlinks.  
-3) On MSWindows, a working script named "wcmp.sh" has yet to be built,
+* Download GNATCOLL from libre.adacore.com/download/
+* Build gnatcoll, but do not install.  Even if errors occur, the one library we need may have been correctly generated.  Under ~/src/lib/gnatcoll/relocatable/ you will find newly generated library files with names beginning with "libgnatcoll".  Copy them into ~/libs/SYS/, where SYS is one of {gnu,osx,win}.  Try to preserve the softlinks.  
+* On MSWindows, a working script named "wcmp.sh" has yet to be built,
 	but should be somewhat similar to "lcmp.sh".
 
 ===============================================================
