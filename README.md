@@ -1,7 +1,7 @@
 # CoTerminalApps
 Retro Games that run in a terminal, and on any platform.
 
-Grab the file coterm28jun16.tar.gz under "releases" for all source and data.
+Grab the file coterm28jun16.tar.gz under "release" for all source and data.
 
 
 # CoTerminalApps v 1.0.0
