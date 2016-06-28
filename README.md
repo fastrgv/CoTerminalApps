@@ -9,7 +9,7 @@ Grab the file coterm28jun16.tar.gz under "release" for all source and data.
 ## What's new:
 
 
-**ver 1.0.0 -- ddmmm16**
+**ver 1.0.0 -- 28jun16**
 
 * original release.
 
