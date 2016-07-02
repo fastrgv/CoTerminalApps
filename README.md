@@ -10,7 +10,7 @@ Grab the file coterm3jul16.tar.gz under "release" for all source and data.
 ## What's new:
 
 
-**ver 1.0.1 -- 30jun16**
+**ver 1.0.1 -- 3jul16**
 
 * Added block slider game named "bslid".
 
