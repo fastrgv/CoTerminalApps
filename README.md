@@ -1,7 +1,7 @@
 # CoTerminalApps
 Retro Games that run in a color-capable terminal, and on any platform.
 
-Grab the file coterm30jun16.tar.gz under "release" for all source and data.
+Grab the file coterm3jul16.tar.gz under "release" for all source and data.
 
 
 
