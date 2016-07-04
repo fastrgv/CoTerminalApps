@@ -1,33 +1,33 @@
 # CoTerminalApps
-Retro Games that run in a color-capable terminal, and on any platform.
+Retro Games that run in a color-capable terminal on any platform.
 
-Grab the file coterm3jul16.tar.gz under "release" for all source and data.
+Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
 
 
-# CoTerminalApps v 1.0.1
+# CoTerminalApps v 1.0.2
 
 ## What's new:
+
+**ver 1.0.2 -- 4jul16**
+
+* Added a2z, seven puzzle games.
 
 
 **ver 1.0.1 -- 3jul16**
 
 * Added block slider game named "bslid".
 
-
-**ver 1.0.0 -- 28jun16**
-
-* original release.
-
-
 ===============================================================
 ## Introduction
 CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing the GNAT GPL Ada compiler.
 
-There are currently two apps:  
+There are four apps:  
 
 * CoTerminalRush (crush.adb) 
 * BlockSlider (bslid.adb)
+* seven (seven.adb)
+* a2z (a2z.adb)
 
 ...described below.
 
@@ -49,18 +49,50 @@ Colored, non-graphical Block Slider puzzle game designed to run in a terminal wi
 
 Colored blocks of letters can be moved horizontally or vertically wherever there is space.  The objective is to move the red block to a specified goal position.
 
-### Gameplay:
+### Gameplay: crush, bslid
 
 "?" toggles the help screen.  The "+" and "-" keys (next, previous) are used to cycle through the large number of predefined puzzles.  You can reset a puzzle by typing "+" then "-".
 
 First, one selects a vehicle or block by typing its identifier letter.  Then use the arrow keys to move it.  Note that manual selection is not always necessary, as there is an auto-select mechanism for those times when only one selection may move in a given direction.  
 
+
 ===============================================================
-## Build Instructions (Linux and OSX):
+### seven, a2z
+
+seven is a flat representation of a 2x2x2 cube with one missing that allows sliding permutations.  Here, the 8-1 elements are labelled 1..7.
+
+a2z is a flat representation of a 3x3x3 cube with one missing that allows sliding permutations.  The 27-1 elements are conveniently labelled with the english alphabet.
+
+Both the "a2z" and "seven" puzzles work the same:
+
+* note the original order, and blank location;
+* mix;
+* then restore.
+
+A character in an adjacent row, column, or layer may be moved to the empty space using the keyboard.
+
+Typically, the (home) key produces the character 'H'.  So assuming that (home)=>'H', (end)=>'F', (up)=>'A', etc...
+the key mapping follows:
+
+* (1)..(5): mix;  higher values are more difficult.
+
+* (up),(i): north
+* (dn),(k): south
+* (rt),(l): east
+* (lt),(j): west
+* (home),(\),(u),(.),(-): layer-up
+* (end),(/),(o),(+): layer-dn
+
+* (?): help
+* (q): quit
+
+
+===============================================================
+## Build Instructions (tested on Linux and OSX):
 * Manually install GNAT GPL 2016 from libre.adacore.com/download/
 * Insure gnatmake is in searchpath. (echo $PATH).
 * Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
-* Compile crush by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents either "crush" or "bslid".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
+* Compile crush by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents "crush", "bslid", "a2z", or "seven".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
 
 
 ## Preparing GnatColl Libraries -- (done already for OS-X, Linux)
@@ -72,7 +104,7 @@ First, one selects a vehicle or block by typing its identifier letter.  Then use
 
 ===============================================================
 ## Running:
-Open a terminal and type "crush" or "bslid" to begin.
+Open a terminal and type the executable name to begin.
 
 ===============================================================
 ## Legal Mumbo Jumbo:
@@ -93,5 +125,3 @@ CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
 
  You may read the full text of the GNU General Public License
  at <http://www.gnu.org/licenses/>.
-
-
