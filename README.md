@@ -4,10 +4,15 @@ Retro Games that run in a color-capable terminal on any platform.
 Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
 
-
-# CoTerminalApps v 1.0.2
+# CoTerminalApps v 1.0.3
 
 ## What's new:
+
+
+**ver 1.0.3 -- 5jul16**
+
+* added sokoban game.
+
 
 **ver 1.0.2 -- 4jul16**
 
@@ -17,21 +22,22 @@ Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 **ver 1.0.1 -- 3jul16**
 
 * Added block slider game named "bslid".
+* Greater care taken to ignore key escape codes.
+
+
+**ver 1.0.0 -- 28jun16**
+
+* original release.
+
 
 ===============================================================
 ## Introduction
 CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing the GNAT GPL Ada compiler.
 
-There are four apps:  
+There are five apps:  crush, bslid, seven, a2z, sokoban.
 
-* CoTerminalRush (crush.adb) 
-* BlockSlider (bslid.adb)
-* seven (seven.adb)
-* a2z (a2z.adb)
 
-...described below.
-
-Usable keys:
+Usable keys for all:
 
 * arrow-keys for movement;
 * (q)=quit
@@ -71,7 +77,7 @@ Both the "a2z" and "seven" puzzles work the same:
 
 A character in an adjacent row, column, or layer may be moved to the empty space using the keyboard.
 
-Typically, the (home) key produces the character 'H'.  So assuming that (home)=>'H', (end)=>'F', (up)=>'A', etc...
+Pressing the (home) key on a typical keyboard produces the character 'H'.  So assuming that (home)=>'H', (end)=>'F', (up)=>'A', etc...
 the key mapping follows:
 
 * (1)..(5): mix;  higher values are more difficult.
@@ -87,12 +93,19 @@ the key mapping follows:
 * (q): quit
 
 
+
+
+### sokoban
+Move the pusher >< with the arrow keys in order to push all the boxes [] onto the goals :: in which case they look like {}.  Various other functions available on the help screen.  Includes a very large family of puzzle files.
+
+
+
 ===============================================================
 ## Build Instructions (tested on Linux and OSX):
 * Manually install GNAT GPL 2016 from libre.adacore.com/download/
 * Insure gnatmake is in searchpath. (echo $PATH).
 * Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
-* Compile by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents "crush", "bslid", "a2z", or "seven".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
+* Compile by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents "crush", "bslid", "a2z", "seven", or "sokoban".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
 
 
 ## Preparing GnatColl Libraries -- (done already for OS-X, Linux)
@@ -104,7 +117,8 @@ the key mapping follows:
 
 ===============================================================
 ## Running:
-Open a terminal and type the executable name to begin.
+Your terminal must accept the "clear" command, and must be 50 chars wide by 20 lines.  Simply type the executable name to begin.
+
 
 ===============================================================
 ## Legal Mumbo Jumbo:
