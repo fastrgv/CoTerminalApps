@@ -92,7 +92,7 @@ the key mapping follows:
 * Manually install GNAT GPL 2016 from libre.adacore.com/download/
 * Insure gnatmake is in searchpath. (echo $PATH).
 * Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
-* Compile crush by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents "crush", "bslid", "a2z", or "seven".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
+* Compile by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents "crush", "bslid", "a2z", or "seven".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
 
 
 ## Preparing GnatColl Libraries -- (done already for OS-X, Linux)
