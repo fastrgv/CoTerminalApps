@@ -1,5 +1,5 @@
 # CoTerminalApps
-Retro Games that run in a color-capable terminal on any platform.
+Retro Games that run in a color-capable terminal on any platform with GNAT GPL installed.
 
 Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
@@ -32,7 +32,7 @@ Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
 ===============================================================
 ## Introduction
-CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing the GNAT GPL Ada compiler.
+CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing both the GNAT GPL Ada compiler and the GnatColl library.
 
 There are five apps:  crush, bslid, seven, a2z, sokoban.
 
