@@ -4,9 +4,16 @@ Retro Games that run in a color-capable terminal on any platform with GNAT GPL i
 Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
 
-# CoTerminalApps v 1.0.3
+# CoTerminalApps v 1.0.4
 
 ## What's new:
+
+
+**ver 1.0.4 -- 11jul16**
+
+* added sokoban solver (trbfs.cc).
+* added bslid solver (bfs.cc).
+* fixed logic error in CoTerminalRush (crush.adb).
 
 
 **ver 1.0.3 -- 5jul16**
