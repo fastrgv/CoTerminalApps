@@ -4,31 +4,38 @@ Retro Games that run in a color-capable terminal on any platform with GNAT GPL i
 Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
 
-# CoTerminalApps v 1.0.4
+
+# CoTerminalApps v 1.0.5
 
 ## What's new:
+
+
+**ver 1.0.5 -- 16jul16**
+
+* added HoleInOne, HoleInOne+4 (chio.adb, chio4.adb)
+* essential improvement to sokoban to speedup key response.
 
 
 **ver 1.0.4 -- 11jul16**
 
 * added sokoban solver (trbfs.cc).
-* added bslid solver (bfs.cc).
+* added cslid solver (bfs.cc).
 * fixed logic error in CoTerminalRush (crush.adb).
 
 
 **ver 1.0.3 -- 5jul16**
 
-* added sokoban game.
+* added csok game.
 
 
 **ver 1.0.2 -- 4jul16**
 
-* Added a2z, seven puzzle games.
+* Added caz, c7 puzzle games.
 
 
 **ver 1.0.1 -- 3jul16**
 
-* Added block slider game named "bslid".
+* Added block slider game named "cslid".
 * Greater care taken to ignore key escape codes.
 
 
@@ -39,9 +46,9 @@ Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
 ===============================================================
 ## Introduction
-CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing both the GNAT GPL Ada compiler and the GnatColl library.
+CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing the GNAT GPL Ada compiler.
 
-There are five apps:  crush, bslid, seven, a2z, sokoban.
+There are 7 apps:  crush, cslid, c7, caz, csok, chio, chio4
 
 
 Usable keys for all:
@@ -51,18 +58,22 @@ Usable keys for all:
 * (?)=help toggle
 
 
-=============================================================================
-### CoTerminalRush
+===========================================================================
+### CoTerminal-Rush (crush.adb)
 Colored, non-graphical Traffic-Rush puzzle game designed to run in a terminal window.
 
 Horizontal and vertical strings of letters represent cars and trucks in a crowded parking garage.  The objective is to move them around lengthwise in order to be able to get red car "a" to the exit, which is either at the right or top of the garage.  Note that the last digits in each puzzle name represents the minimum number of moves to win.
 
-### BlockSlide
+
+### CoTerminal-BlockSlide (cslid.adb)
 Colored, non-graphical Block Slider puzzle game designed to run in a terminal window.
 
 Colored blocks of letters can be moved horizontally or vertically wherever there is space.  The objective is to move the red block to a specified goal position.
 
-### Gameplay: crush, bslid
+Also, a cslid solver named bfs has been added.  The command line is "bfs puzzle-file-name".  Compile it with the command "ccc.sh bfs".
+
+
+### Gameplay: crush, cslid
 
 "?" toggles the help screen.  The "+" and "-" keys (next, previous) are used to cycle through the large number of predefined puzzles.  You can reset a puzzle by typing "+" then "-".
 
@@ -70,13 +81,13 @@ First, one selects a vehicle or block by typing its identifier letter.  Then use
 
 
 ===============================================================
-### seven, a2z
+### CoTerminal Seven, A2Z (c7.adb, caz.adb)
 
-seven is a flat representation of a 2x2x2 cube with one missing that allows sliding permutations.  Here, the 8-1 elements are labelled 1..7.
+c7 is a flat representation of a 2x2x2 cube with one missing that allows sliding permutations.  Here, the 8-1 elements are labelled 1..7.
 
-a2z is a flat representation of a 3x3x3 cube with one missing that allows sliding permutations.  The 27-1 elements are conveniently labelled with the english alphabet.
+caz is a flat representation of a 3x3x3 cube with one missing that allows sliding permutations.  The 27-1 elements are conveniently labelled with the english alphabet.
 
-Both the "a2z" and "seven" puzzles work the same:
+Both the "caz" and "c7" puzzles work the same:
 
 * note the original order, and blank location;
 * mix;
@@ -101,18 +112,26 @@ the key mapping follows:
 
 
 
+===============================================================
 
-### sokoban
+### CoTerminal-sokoban (csok.adb)
 Move the pusher >< with the arrow keys in order to push all the boxes [] onto the goals :: in which case they look like {}.  Various other functions available on the help screen.  Includes a very large family of puzzle files.
 
+A sokoban solver named trbfs has been added.  It uses a brute-force reverse breadth-first search with no heuristics and a splay tree to store and check for previously seen configurations.  The command line is "trbfs puzzle-file-name max-levels level-number". Note that the max-levels is embedded into the puzzle file name.
 
+The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.  Compile it with the command "ccc.sh trbfs".
+
+There are many cases this solver cannot handle, but it is pretty good at sovling certain types of puzzles, particularly the more dense ones.  It is not very good at the near-Lishout type, if you know what that means.
+
+### CoTerminal-HoleInOne (chio.adb, chio4.adb)
+Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 
 ===============================================================
 ## Build Instructions (tested on Linux and OSX):
 * Manually install GNAT GPL 2016 from libre.adacore.com/download/
 * Insure gnatmake is in searchpath. (echo $PATH).
 * Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
-* Compile by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents "crush", "bslid", "a2z", "seven", or "sokoban".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
+* Compile by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents "crush", "cslid", "caz", "c7", or "csok".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
 
 
 ## Preparing GnatColl Libraries -- (done already for OS-X, Linux)
@@ -146,3 +165,8 @@ CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
 
  You may read the full text of the GNU General Public License
  at <http://www.gnu.org/licenses/>.
+
+
+----------------------------------------------
+## Best Download Site for all my games:
+https://github.com/fastrgv?tab=repositories
