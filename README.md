@@ -1,3 +1,5 @@
+![screenshot](https://github.com/fastrgv/CoTerminalApps/blob/master/crush.jpg)
+
 # CoTerminalApps
 Retro Games that run in a color-capable terminal on any platform with GNAT GPL installed.
 
