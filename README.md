@@ -6,16 +6,24 @@ Retro Games that run in a color-capable terminal on any platform with GNAT GPL i
 Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
 
-
-# CoTerminalApps v 1.0.5
+# CoTerminalApps v 1.0.6
 
 ## What's new:
+
+
+**ver 1.0.6 -- 27jul16**
+
+* added CoTerminal-DirtyDozen block slider (cdd.adb)
+* added CoTerminal-Nine by Grabarchuk (c9.adb)
+* improvements in csok::Draw that include speedup option (s-key).
+* added restart option to cslid.adb, crush.adb
+* added CoTerminal-Pacman (cpac.adb)
 
 
 **ver 1.0.5 -- 16jul16**
 
 * added HoleInOne, HoleInOne+4 (chio.adb, chio4.adb)
-* essential improvement to sokoban to speedup key response.
+* small improvement to sokoban key response.
 
 
 **ver 1.0.4 -- 11jul16**
@@ -50,7 +58,7 @@ Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 ## Introduction
 CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing the GNAT GPL Ada compiler.
 
-There are 7 apps:  crush, cslid, c7, caz, csok, chio, chio4
+There are 10 apps:  crush, cslid, c7, caz, csok, chio, chio4, c9, cdd, cpac
 
 
 Usable keys for all:
@@ -61,14 +69,19 @@ Usable keys for all:
 
 
 ===========================================================================
+
+### CoTerminal-pacman (cpac.adb)
+A minimalist version of Pacman with 9 predefined levels.  Playable now, with further improvements expected.
+
+
 ### CoTerminal-Rush (crush.adb)
 Colored, non-graphical Traffic-Rush puzzle game designed to run in a terminal window.
 
 Horizontal and vertical strings of letters represent cars and trucks in a crowded parking garage.  The objective is to move them around lengthwise in order to be able to get red car "a" to the exit, which is either at the right or top of the garage.  Note that the last digits in each puzzle name represents the minimum number of moves to win.
 
 
-### CoTerminal-BlockSlide (cslid.adb)
-Colored, non-graphical Block Slider puzzle game designed to run in a terminal window.
+### CoTerminal-BlockSlide (cslid.adb), CoTerminal-DirtyDozen (cdd.adb)
+Colored, non-graphical Block Slider puzzle games designed to run in a terminal window.
 
 Colored blocks of letters can be moved horizontally or vertically wherever there is space.  The objective is to move the red block to a specified goal position.
 
@@ -128,12 +141,15 @@ There are many cases this solver cannot handle, but it is pretty good at sovling
 ### CoTerminal-HoleInOne (chio.adb, chio4.adb)
 Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 
+### CoTerminal-Nine (c9.adb)
+Reverse the order of the numbered blocks.
+
 ===============================================================
 ## Build Instructions (tested on Linux and OSX):
 * Manually install GNAT GPL 2016 from libre.adacore.com/download/
 * Insure gnatmake is in searchpath. (echo $PATH).
 * Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
-* Compile by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] represents "crush", "cslid", "caz", "c7", or "csok".  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
+* Compile by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] is in the set {crush,cslid,caz,c7,csok,chio,chio4,c9,cdd,cpac}.  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
 
 
 ## Preparing GnatColl Libraries -- (done already for OS-X, Linux)
@@ -145,8 +161,12 @@ Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 
 ===============================================================
 ## Running:
-Your terminal must accept the "clear" command, and must be 50 chars wide by 20 lines.  Simply type the executable name to begin.
+Your terminal must accept the "clear" command, and must be 50 chars wide by 20 lines (57x35 for pacman).  Simply type the executable name to begin.
 
+
+===============================================================
+## Known Problems:
+Occasionally, there is poor key response.  This might be due to the many color changes with each draw.  If this happens, hit the s-key to toggle alternate colors that redraw much faster.
 
 ===============================================================
 ## Legal Mumbo Jumbo:
@@ -168,6 +188,12 @@ CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
  You may read the full text of the GNU General Public License
  at <http://www.gnu.org/licenses/>.
 
+
+----------------------------------------------
+## Other Credits and Thanks:
+Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plus 4", and "Nine" puzzles.
+
+Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, after which this Ada version was modelled (gnu gpl).
 
 ----------------------------------------------
 ## Best Download Site for all my games:
