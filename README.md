@@ -3,12 +3,20 @@
 # CoTerminalApps
 Retro Games that run in a color-capable terminal on any platform with GNAT GPL installed.
 
-Grab the file coterm*.tar.gz under "release...latest" for all source and data.
+Grab the file Cotapps.tar.gz under "release...latest" for all source and data.
 
 
-# CoTerminalApps v 1.0.6
+# CoTerminalApps v 1.0.7
 
 ## What's new:
+
+
+**ver 1.0.7 -- 22aug16**
+
+* added two sokoban solvers (puller.adb, ibox.adb).
+* added cslid solver (bfs.adb).
+* added crush solver (bfsr.adb)
+* improved pacman gameplay, collision-detection, randomization.
 
 
 **ver 1.0.6 -- 27jul16**
@@ -28,8 +36,6 @@ Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 
 **ver 1.0.4 -- 11jul16**
 
-* added sokoban solver (trbfs.cc).
-* added cslid solver (bfs.cc).
 * fixed logic error in CoTerminalRush (crush.adb).
 
 
@@ -58,7 +64,7 @@ Grab the file coterm*.tar.gz under "release...latest" for all source and data.
 ## Introduction
 CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing the GNAT GPL Ada compiler.
 
-There are 10 apps:  crush, cslid, c7, caz, csok, chio, chio4, c9, cdd, cpac
+There are 10 apps that use ascii characters only:  crush, cslid, c7, caz, csok, chio, chio4, c9, cdd, cpac
 
 
 Usable keys for all:
@@ -79,13 +85,15 @@ Colored, non-graphical Traffic-Rush puzzle game designed to run in a terminal wi
 
 Horizontal and vertical strings of letters represent cars and trucks in a crowded parking garage.  The objective is to move them around lengthwise in order to be able to get red car "a" to the exit, which is either at the right or top of the garage.  Note that the last digits in each puzzle name represents the minimum number of moves to win.
 
+Also, a solver named bfsr has been added that works for puzzle files with the ".rush" filename extension.  The command line is "bfsr puzzle-file-name".  Compile it with the command "cmp.sh bfsr".
+
 
 ### CoTerminal-BlockSlide (cslid.adb), CoTerminal-DirtyDozen (cdd.adb)
 Colored, non-graphical Block Slider puzzle games designed to run in a terminal window.
 
 Colored blocks of letters can be moved horizontally or vertically wherever there is space.  The objective is to move the red block to a specified goal position.
 
-Also, a cslid solver named bfs has been added.  The command line is "bfs puzzle-file-name".  Compile it with the command "ccc.sh bfs".
+Also, a solver named bfs has been added that works for puzzle files with the ".blok" filename extension.  The command line is "bfs puzzle-file-name".  Compile it with the command "cmp.sh bfs".
 
 
 ### Gameplay: crush, cslid
@@ -132,11 +140,12 @@ the key mapping follows:
 ### CoTerminal-sokoban (csok.adb)
 Move the pusher >< with the arrow keys in order to push all the boxes [] onto the goals :: in which case they look like {}.  Various other functions available on the help screen.  Includes a very large family of puzzle files.
 
-A sokoban solver named trbfs has been added.  It uses a brute-force reverse breadth-first search with no heuristics and a splay tree to store and check for previously seen configurations.  The command line is "trbfs puzzle-file-name max-levels level-number". Note that the max-levels is embedded into the puzzle file name.
+Two sokoban solvers named puller & ibox have been added.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name.
 
-The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.  Compile it with the command "ccc.sh trbfs".
+The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.  Compile it with the command "cmp.sh puller" or "cmp.sh ibox".
 
-There are many cases this solver cannot handle, but it is pretty good at sovling certain types of puzzles, particularly the more dense ones.  It is not very good at the near-Lishout type, if you know what that means.
+There are many cases these solvers cannot handle, but they are pretty good at sovling certain types of puzzles, particularly the more dense ones.
+
 
 ### CoTerminal-HoleInOne (chio.adb, chio4.adb)
 Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
