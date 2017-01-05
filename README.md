@@ -5,11 +5,18 @@ Retro Games that run in a color-capable terminal on any platform with GNAT GPL i
 
 Grab the file Cotapps.tar.gz under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v1.0.7/Cotapps.tar.gz
+https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.0/cot5jan17.tar.gz
 
-# CoTerminalApps v 1.0.7
+
+# CoTerminalApps v 1.1.0
 
 ## What's new:
+
+**ver 1.1.0 -- 5jan17**
+
+* Now supply prebuilt binaries for OS-X and Linux.  Look in ./bin/gnu or ./bin/osx/.
+* Improved build system.
+
 
 
 **ver 1.0.7 -- 22aug16**
