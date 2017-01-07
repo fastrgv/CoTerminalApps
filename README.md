@@ -70,16 +70,16 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.0/cot5jan17.tar
 
 ===============================================================
 ## Introduction
-CoTerminalApps contains color-terminal puzzle games that can run on any OS capable of installing the GNAT GPL Ada compiler.
+CoTerminalApps contains color-terminal games that run on OS-X and Gnu/Linux, but can also be built to run on any OS capable of installing the GNAT GPL Ada compiler.
 
-There are 10 apps that use ascii characters only:  crush, cslid, c7, caz, csok, chio, chio4, c9, cdd, cpac
-
+Includes Pacman and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
 
 Usable keys for all:
 
 * arrow-keys for movement;
 * (q)=quit
 * (?)=help toggle
+
 
 
 ===========================================================================
