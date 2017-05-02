@@ -5,22 +5,34 @@ Retro Games that run in a color-capable terminal on any platform with GNAT GPL i
 
 Grab the file Cotapps.tar.gz under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.0/cotrm7jan17.tar.gz
 
-
-# CoTerminalApps v 1.1.1
+# CoTerminalApps
 
 ## What's new:
 
+
+**ver 1.1.2 -- 2may17**
+
+* added DirtyDozen [external] solver (bfsl.adb) that handles L-shaped blocks.
+* embedded autosolvers initiated by the (=)-key into:
+	* cdd (DirtyDozen)
+	* crush (TrafficRush)
+	* cslid (BlockSliders)
+	* csok (Sokoban)
+
+
 **ver 1.1.1 -- 7jan17**
 
-* Now supply prebuilt binaries for OS-X and Linux.  Look in ./bin/gnu or ./bin/osx/.
+* Added missing libraries for the Gnu/Linux prebuilt binaries.  They should now run even without installing the GNAT GPL Ada compiler, or the GNATColl libraries.
+* Still, for MSWin and other OS's, one must install GNAT and rebuild.
+
+**ver 1.1.0 -- 5jan17**
+
+* Now supply prebuild binaries for OS-X and Linux;
 * Improved build system.
-* Added missing libraries for the Gnu/Linux prebuilt binaries.  They should now run even without installing the GNAT GPL Ada compiler.
 
 
-
-**ver 1.0.7 -- 22aug16**
+**ver 1.0.7 -- 20aug16**
 
 * added two sokoban solvers (puller.adb, ibox.adb).
 * added cslid solver (bfs.adb).
@@ -71,7 +83,7 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.0/cotrm7jan17.t
 
 ===============================================================
 ## Introduction
-CoTerminalApps contains color-terminal games that run on OS-X and Gnu/Linux, but can also be built to run on any OS capable of installing the GNAT GPL Ada compiler.
+CoTerminalApps contains color-terminal games that run on OS-X and Gnu/Linux, but can also be rebuilt to run on any OS capable of installing the GNAT GPL Ada compiler.
 
 Includes Pacman and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
 
@@ -82,6 +94,11 @@ Usable keys for all:
 * (?)=help toggle
 
 
+===========================================================================
+## Compiler Scripts
+There are two scripts, lcmp.sh for Linux, and ocmp.sh for OS-X.  The references below that mention "cmp.sh" refer to the script appropriate to your operating system.
+
+Similarly, there are also two scripts that build everything at once called "lbuildall.sh" and "obuildall.sh".
 
 ===========================================================================
 
@@ -94,7 +111,7 @@ Colored, non-graphical Traffic-Rush puzzle game designed to run in a terminal wi
 
 Horizontal and vertical strings of letters represent cars and trucks in a crowded parking garage.  The objective is to move them around lengthwise in order to be able to get red car "a" to the exit, which is either at the right or top of the garage.  Note that the last digits in each puzzle name represents the minimum number of moves to win.
 
-Also, a solver named bfsr has been added that works for puzzle files with the ".rush" filename extension.  The command line is "bfsr puzzle-file-name".  Compile it with the command "cmp.sh bfsr".
+Now, an autosolver is embedded into this game.  At any time you may press the (=)-key to begin stepping toward a solution.
 
 
 ### CoTerminal-BlockSlide (cslid.adb), CoTerminal-DirtyDozen (cdd.adb)
@@ -102,7 +119,7 @@ Colored, non-graphical Block Slider puzzle games designed to run in a terminal w
 
 Colored blocks of letters can be moved horizontally or vertically wherever there is space.  The objective is to move the red block to a specified goal position.
 
-Also, a solver named bfs has been added that works for puzzle files with the ".blok" filename extension.  The command line is "bfs puzzle-file-name".  Compile it with the command "cmp.sh bfs".
+Now, an autosolver is embedded into these games.  At any time you may press the (=)-key to begin stepping toward a solution.
 
 
 ### Gameplay: crush, cslid
@@ -149,11 +166,13 @@ the key mapping follows:
 ### CoTerminal-sokoban (csok.adb)
 Move the pusher >< with the arrow keys in order to push all the boxes [] onto the goals :: in which case they look like {}.  Various other functions available on the help screen.  Includes a very large family of puzzle files.
 
-Two sokoban solvers named puller & ibox have been added.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name.
+Two [external] sokoban solvers named puller & ibox have been added.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name.
 
 The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.  Compile it with the command "cmp.sh puller" or "cmp.sh ibox".
 
 There are many cases these solvers cannot handle, but they are pretty good at sovling certain types of puzzles, particularly the more dense ones.
+
+But now a time-limited solver is embedded into csok.  At any time you may press the (=)-key to see if the solver can help you.  If so, you will be prompted to keep pressing that same key to proceed toward a solution.  No prompt means either the present state is unsolvable, or merely that the embedded algorithm failed.
 
 
 ### CoTerminal-HoleInOne (chio.adb, chio4.adb)
@@ -164,34 +183,41 @@ Reverse the order of the numbered blocks.
 
 ===============================================================
 ## Build Instructions (tested on Linux and OSX):
-* Manually install GNAT GPL 2016 from libre.adacore.com/download/
+* Manually install GNAT GPL 2016 or newer from libre.adacore.com/download/
 * Insure gnatmake is in searchpath. (echo $PATH).
 * Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
-* Compile by typing "ocmp.sh [game]" for OSX, or "lcmp.sh [game]" for linux, to create a command-line executable, where [game] is in the set {crush,cslid,caz,c7,csok,chio,chio4,c9,cdd,cpac}.  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
-
+* Compile by typing "obuildall.sh" for OSX, or "lbuildall.sh" for linux, to create command-line executables for crush,cslid,caz,c7,csok,chio,chio4,c9,cdd,cpac.  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
+* Note that these scripts put the resulting games into subdirectories according to OS type, to avoid clutter.  (See Running, below).
 
 ## Preparing GnatColl Libraries -- (done already for OS-X, Linux)
 * Download GNATCOLL from libre.adacore.com/download/
-* Build gnatcoll, but do not install.  Even if errors occur, the one library we need may have been correctly generated.  Under ~/src/lib/gnatcoll/relocatable/ you will find newly generated library files with names beginning with "libgnatcoll".  Copy them into ~/libs/SYS/, where SYS is one of {gnu,osx,win}.  Try to preserve the softlinks.
+* Build gnatcoll, but do not install.  Even if errors occur, the one library we need may have been correctly generated.  Under ~/src/lib/gnatcoll/relocatable/ you will find newly generated library files with names beginning with "libgnatcoll".  Copy them into ~/libs/SYS/, where SYS is one of {gnu,osx,win}.  Try to preserve the softlinks (cp -a .).
 * Copy gnatcoll.ads, gnatcoll-terminal.ads, gnatcoll-terminal.adb into ~/adainclude/ if they are any different from the ones there already.
 * On MSWindows, a working script named "wcmp.sh" has yet to be built,
 	but should be somewhat similar to "lcmp.sh".
 
 ===============================================================
 ## Running:
-Your terminal must accept the "clear" command, and must be 50 chars wide by 20 lines (57x35 for pacman).  Simply type the executable name to begin.
+Your terminal must accept the "clear" command, and must be at least 50 chars wide by 20 lines (at least 57x35 for pacman).  Simply type the executable name to begin.
+
+For example, on OSX, you would open a terminal, and cd to the install directory and type:
+
+./bin/osx/csok
+
+to run the Sokoban game.
+
 
 
 ===============================================================
 ## Known Problems:
-Occasionally, there is poor key response.  This might be due to the many color changes with each draw.  If this happens, hit the s-key to toggle alternate colors that redraw much faster.
+Occasionally, there is poor key response.  This might be due to the many color changes with each draw.  If this happens, hit the s-key to toggle alternate colors that redraw faster.
 
 ===============================================================
 ## Legal Mumbo Jumbo:
 
 CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
 
- Copyright (C) 2016  <fastrgv@gmail.com>
+ Copyright (C) 2017  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -216,3 +242,4 @@ Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, af
 ----------------------------------------------
 ## Best Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
+
