@@ -8,9 +8,21 @@ Grab the large file under "release...latest" for all source and data, or try thi
 https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.2/ctrm5may17.tar.gz
 
 
+
 # CoTerminalApps
 
 ## What's new:
+
+
+
+**ver 1.1.3 -- 17oct17**
+
+* added keymaps for IJKL, WASD, when possible, eg. pacman;
+* minor correction to compilation scripts;
+* pacman (cpac):
+	* now enqueue ONLY valid moves;
+	* corrected, improved, simplified movement logic;
+* major update to OSX libraries to AdaCore 2017;
 
 
 **ver 1.1.2 -- 2may17**
@@ -85,7 +97,7 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.2/ctrm5may17.ta
 
 ===============================================================
 ## Introduction
-CoTerminalApps contains color-terminal games that run on OS-X and Gnu/Linux, but can also be rebuilt to run on any OS capable of installing the GNAT GPL Ada compiler.
+CoTerminalApps contains color-terminal games that run on OS-X and Gnu/Linux, but can also be rebuilt to run on any OS capable of installing the GNAT GPL Ada compiler.  The only difference from TerminalApps is the use of the gnat library gnatcoll to enable colored characters, which makes many games/puzzles easier to understand.
 
 Includes Pacman and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
 
@@ -100,12 +112,16 @@ Usable keys for all:
 ## Compiler Scripts
 There are two scripts, lcmp.sh for Linux, and ocmp.sh for OS-X.  The references below that mention "cmp.sh" refer to the script appropriate to your operating system.
 
-Similarly, there are also two scripts that build everything at once called "lbuildall.sh" and "obuildall.sh".
+There are also two scripts that build everything at once called "lbuildall.sh" (linux) and "obuildall.sh" (osx).
+
+Scripts for MSWin should be similar, but are not yet provided.
 
 ===========================================================================
 
 ### CoTerminal-pacman (cpac.adb)
-A minimalist version of Pacman with 9 predefined levels.  Playable now, with further improvements expected.
+A primitive version of Pacman with 9 predefined levels.
+
+For this game, keyboard setup is critical to playability.  One must have a very short key-delay and fast repeat setting.  The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.  Note that there is a parameter called "tick" inside cpac.adb that is currently set to 0.2 seconds.  Advanced users might want to adjust this number, then recompile.  It controls game speed (smaller implies faster).  Suggestions are welcome.
 
 
 ### CoTerminal-Rush (crush.adb)
@@ -113,7 +129,7 @@ Colored, non-graphical Traffic-Rush puzzle game designed to run in a terminal wi
 
 Horizontal and vertical strings of letters represent cars and trucks in a crowded parking garage.  The objective is to move them around lengthwise in order to be able to get red car "a" to the exit, which is either at the right or top of the garage.  Note that the last digits in each puzzle name represents the minimum number of moves to win.
 
-Now, an autosolver is embedded into this game.  At any time you may press the (=)-key to begin stepping toward a solution.
+A stand alone autosolver, bfsr, is provided, but now, an autosolver is embedded into this game.  At any time you may press the (=)-key to begin stepping toward a solution.
 
 
 ### CoTerminal-BlockSlide (cslid.adb), CoTerminal-DirtyDozen (cdd.adb)
@@ -151,10 +167,10 @@ the key mapping follows:
 
 * (1)..(5): mix;  higher values are more difficult.
 
-* (up),(i): north
-* (dn),(k): south
-* (rt),(l): east
-* (lt),(j): west
+* (up),(i),(w): north
+* (dn),(k),(s): south
+* (rt),(l),(d): east
+* (lt),(j),(a): west
 * (home),(\),(u),(.),(-): layer-up
 * (end),(/),(o),(+): layer-dn
 
@@ -185,6 +201,8 @@ Reverse the order of the numbered blocks.
 
 ===============================================================
 ## Build Instructions (tested on Linux and OSX):
+Remember that prebuilt executables for GNU/Linux and Mac OS-X are already included.  If you want to rebuild...
+
 * Manually install GNAT GPL 2016 or newer from libre.adacore.com/download/
 * Insure gnatmake is in searchpath. (echo $PATH).
 * Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
@@ -212,7 +230,8 @@ to run the Sokoban game.
 
 ===============================================================
 ## Known Problems:
-Occasionally, there is poor key response.  This might be due to the many color changes with each draw.  If this happens, hit the s-key to toggle alternate colors that redraw faster.
+Occasionally, there may be poor key response, (eg. pacman).  This might be due to the many color changes with each draw.  If it becomes intolerable, you can try my TerminalApps collection, which is similar but does not use colored characters.
+
 
 ===============================================================
 ## Legal Mumbo Jumbo:
