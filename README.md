@@ -8,97 +8,20 @@ Grab the large file under "release...latest" for all source and data, or try thi
 https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.3/ctrm18oct17.tar.gz
 
 
+
 # CoTerminalApps
 
 ## What's new:
 
+**ver 1.1.4 -- 26oct17**
 
-
-**ver 1.1.3 -- 17oct17**
-
-* added keymaps for IJKL, WASD, when possible, eg. pacman;
-* minor correction to compilation scripts;
-* pacman (cpac):
-	* now enqueue ONLY valid moves;
-	* corrected, improved, simplified movement logic;
-* major update to OSX libraries to AdaCore 2017;
-* now uses static libraries to simplify build process and enhance robustness;
-
-
-
-**ver 1.1.2 -- 2may17**
-
-* added DirtyDozen [external] solver (bfsl.adb) that handles L-shaped blocks.
-* embedded autosolvers initiated by the (=)-key into:
-	* cdd (DirtyDozen)
-	* crush (TrafficRush)
-	* cslid (BlockSliders)
-	* csok (Sokoban)
-
-
-**ver 1.1.1 -- 7jan17**
-
-* Added missing libraries for the Gnu/Linux prebuilt binaries.  They should now run even without installing the GNAT GPL Ada compiler, or the GNATColl libraries.
-* Still, for MSWin and other OS's, one must install GNAT and rebuild.
-
-**ver 1.1.0 -- 5jan17**
-
-* Now supply prebuild binaries for OS-X and Linux;
-* Improved build system.
-
-
-**ver 1.0.7 -- 20aug16**
-
-* added two sokoban solvers (puller.adb, ibox.adb).
-* added cslid solver (bfs.adb).
-* added crush solver (bfsr.adb)
-* improved pacman gameplay, collision-detection, randomization.
-
-
-**ver 1.0.6 -- 27jul16**
-
-* added CoTerminal-DirtyDozen block slider (cdd.adb)
-* added CoTerminal-Nine by Grabarchuk (c9.adb)
-* improvements in csok::Draw that include speedup option (s-key).
-* added restart option to cslid.adb, crush.adb
-* added CoTerminal-Pacman (cpac.adb)
-
-
-**ver 1.0.5 -- 16jul16**
-
-* added HoleInOne, HoleInOne+4 (chio.adb, chio4.adb)
-* small improvement to sokoban key response.
-
-
-**ver 1.0.4 -- 11jul16**
-
-* fixed logic error in CoTerminalRush (crush.adb).
-
-
-**ver 1.0.3 -- 5jul16**
-
-* added csok game.
-
-
-**ver 1.0.2 -- 4jul16**
-
-* Added caz, c7 puzzle games.
-
-
-**ver 1.0.1 -- 3jul16**
-
-* Added block slider game named "cslid".
-* Greater care taken to ignore key escape codes.
-
-
-**ver 1.0.0 -- 28jun16**
-
-* original release.
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
 
 
 ===============================================================
 ## Introduction
-CoTerminalApps contains color-terminal games that run on OS-X and Gnu/Linux, but can also be rebuilt to run on any OS capable of installing the GNAT GPL Ada compiler.  The only difference from TerminalApps is the use of the gnat library gnatcoll to enable colored characters, which makes many games/puzzles easier to understand.
+CoTerminalApps contains color-terminal [command-prompt] games that run on msWindows, OS-X and Gnu/Linux, and can also be rebuilt after installing the GNAT GPL Ada compiler.  The only difference from TerminalApps is the use of the gnat library gnatcoll to enable colored characters, which makes many games/puzzles easier to understand.
 
 Includes Pacman and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
 
@@ -108,14 +31,6 @@ Usable keys for all:
 * (q)=quit
 * (?)=help toggle
 
-
-===========================================================================
-## Compiler Scripts
-There are two scripts, lcmp.sh for Linux, and ocmp.sh for OS-X.  The references below that mention "cmp.sh" refer to the script appropriate to your operating system.
-
-There are also two scripts that build everything at once called "lbuildall.sh" (linux) and "obuildall.sh" (osx).
-
-Scripts for MSWin should be similar, but are not yet provided.
 
 ===========================================================================
 
@@ -200,38 +115,33 @@ Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 ### CoTerminal-Nine (c9.adb)
 Reverse the order of the numbered blocks.
 
+
+===========================================================================
+## Compiler Scripts
+There are three scripts, wbuildall.bat for msWindows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  Now with so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place.
+
+
 ===============================================================
-## Build Instructions (tested on Linux and OSX):
-Remember that prebuilt executables for GNU/Linux and Mac OS-X are already included.  If you want to rebuild...
+## Build Instructions:
+Remember that prebuilt executables are already included.  If you want to rebuild...
 
-* Manually install GNAT GPL 2016 or newer from libre.adacore.com/download/
-* Insure gnatmake is in searchpath. (echo $PATH).
-* Note that ~/libs/gnu/ and ~/libs/osx/ directories have already been populated with libgnatcoll.so.2016 libraries.  It is claimed that these must match the version of gnat being used.
-* Compile by typing "obuildall.sh" for OSX, or "lbuildall.sh" for linux, to create command-line executables for crush,cslid,caz,c7,csok,chio,chio4,c9,cdd,cpac.  These scripts streamline the build process by allowing auxilliary libraries and files to be neatly hidden in subdirectories.
-* Note that these scripts put the resulting games into subdirectories according to OS type, to avoid clutter.  (See Running, below).
+Manually install GNAT GPL from libre.adacore.com/download/.  If you don't like my key-mappings, edit the code as you like.
 
-## Preparing GnatColl Libraries -- (done already for OS-X, Linux)
-* Download GNATCOLL from libre.adacore.com/download/
-* Build gnatcoll, but do not install.  Even if errors occur, the one library we need may have been correctly generated.  Under ~/src/lib/gnatcoll/relocatable/ you will find newly generated library files with names beginning with "libgnatcoll".  Copy them into ~/libs/SYS/, where SYS is one of {gnu,osx,win}.  Try to preserve the softlinks (cp -a .).
-* Copy gnatcoll.ads, gnatcoll-terminal.ads, gnatcoll-terminal.adb into ~/adainclude/ if they are any different from the ones there already.
-* On MSWindows, a working script named "wcmp.sh" has yet to be built,
-	but should be somewhat similar to "lcmp.sh".
+Next, edit the scripts wcmp.bat or lcmp.sh or ocmp.sh so that the path to gnatmake is correct.  These scripts streamline the build process by allowing auxilliary files to be neatly hidden in subdirectories.  And make sure it is executable.
+
+Then type "[wlo]buildall" to create new command-line executables for your system.
+
+
 
 ===============================================================
 ## Running:
-Your terminal must accept the "clear" command, and must be at least 50 chars wide by 20 lines (at least 57x35 for pacman).  Simply type the executable name to begin.
+Your terminal must be at least 50 chars wide by 20 lines (at least 57x35 for pacman).  Simply type the executable name to begin.
 
 For example, on OSX, you would open a terminal, and cd to the install directory and type:
 
 ./bin/osx/csok
 
 to run the Sokoban game.
-
-
-
-===============================================================
-## Known Problems:
-Occasionally, there may be poor key response, (eg. pacman).  This might be due to the many color changes with each draw.  If it becomes intolerable, you can try my TerminalApps collection, which is similar but does not use colored characters.
 
 
 ===============================================================
@@ -264,4 +174,92 @@ Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, af
 ----------------------------------------------
 ## Best Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
+
+
+--------------------------------------------------
+## Earlier Revision History:
+
+
+**ver 1.1.3 -- 18oct17**
+
+* added keymaps for IJKL, WASD, when possible, eg. pacman;
+* minor correction to compilation scripts;
+* pacman (cpac):
+	* now enqueue ONLY valid moves;
+	* corrected, improved, simplified movement logic;
+* major update to OSX libraries to AdaCore 2017;
+* now uses static libraries to simplify build process and enhance robustness;
+
+
+**ver 1.1.2 -- 2may17**
+
+* added DirtyDozen [external] solver (bfsl.adb) that handles L-shaped blocks.
+* embedded autosolvers initiated by the (=)-key into:
+	* cdd (DirtyDozen)
+	* crush (TrafficRush)
+	* cslid (BlockSliders)
+	* csok (Sokoban)
+
+
+**ver 1.1.1 -- 7jan17**
+
+* Added missing libraries for the Gnu/Linux prebuilt binaries.  They should now run even without installing the GNAT GPL Ada compiler, or the GNATColl libraries.
+* Still, for MSWin and other OS's, one must install GNAT and rebuild.
+
+**ver 1.1.0 -- 5jan17**
+
+* Now supply prebuild binaries for OS-X and Linux;
+* Improved build system.
+
+
+**ver 1.0.7 -- 20aug16**
+
+* added two sokoban solvers (puller.adb, ibox.adb).
+* added cslid solver (bfs.adb).
+* added crush solver (bfsr.adb)
+* improved pacman gameplay, collision-detection, randomization.
+
+
+**ver 1.0.6 -- 27jul16**
+
+* added CoTerminal-DirtyDozen block slider (cdd.adb)
+* added CoTerminal-Nine by Grabarchuk (c9.adb)
+* improvements in csok::Draw that include speedup option (s-key).
+* added restart option to cslid.adb, crush.adb
+* added CoTerminal-Pacman (cpac.adb)
+
+
+**ver 1.0.5 -- 16jul16**
+
+* added HoleInOne, HoleInOne+4 (chio.adb, chio4.adb)
+* small improvement to sokoban key response.
+
+
+**ver 1.0.4 -- 11jul16**
+
+* fixed logic error in CoTerminalRush (crush.adb).
+
+
+**ver 1.0.3 -- 5jul16**
+
+* added csok game.
+
+
+**ver 1.0.2 -- 4jul16**
+
+* Added caz, c7 puzzle games.
+
+
+**ver 1.0.1 -- 3jul16**
+
+* Added block slider game named "cslid".
+* Greater care taken to ignore key escape codes.
+
+
+**ver 1.0.0 -- 28jun16**
+
+* original release.
+
+
+
 
