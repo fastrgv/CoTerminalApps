@@ -5,8 +5,7 @@ Retro Games that run in a color-capable terminal on any platform with GNAT GPL i
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.3/ctrm18oct17.tar.gz
-
+https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.4/cot26oct17.tar.gz
 
 
 # CoTerminalApps
