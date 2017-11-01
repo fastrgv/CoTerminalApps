@@ -12,6 +12,10 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.4/cot29oct17.ta
 
 ## What's new:
 
+Video showing BlockSlider Autosolve:
+https://youtu.be/dD3VGbXv3ng
+
+
 **ver 1.1.4 -- 26oct17**
 
 * added prebuilt executables for msWindows;
