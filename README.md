@@ -16,6 +16,14 @@ Video showing BlockSlider Autosolve:
 https://youtu.be/dD3VGbXv3ng
 
 
+
+**ver 1.1.5 -- 1dec17**
+
+* now using the intrinsic file detection function:  Exists();
+* elliminated need for directory links, simplifying Windows install.
+* huge performance improvements by not erasing screens between redraws.
+
+
 **ver 1.1.4 -- 26oct17**
 
 * added prebuilt executables for msWindows;
