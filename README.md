@@ -1,7 +1,7 @@
 ![screenshot](https://github.com/fastrgv/CoTerminalApps/blob/master/crush.jpg)
 
 # CoTerminalApps
-Retro Games that run in a color-capable terminal on any platform with GNAT GPL installed.
+Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX, & Linux.
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
