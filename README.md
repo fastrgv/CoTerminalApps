@@ -5,7 +5,7 @@ Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.4/co4dec17.tar.gz
+https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.4/co5dec17.tar.gz
 
 
 # CoTerminalApps
@@ -17,8 +17,9 @@ https://youtu.be/dD3VGbXv3ng
 
 
 
-**ver 1.1.5 -- 1dec17**
+**ver 1.1.5 -- 5dec17**
 
+* added DLLs needed under Windows;
 * now using the intrinsic file detection function:  Exists();
 * elliminated need for directory links, simplifying Windows install.
 * huge performance improvements by not erasing screens between redraws.
