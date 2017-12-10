@@ -5,7 +5,7 @@ Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.4/co5dec17.tar.gz
+https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.6/co10dec.tar.gz
 
 
 
