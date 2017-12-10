@@ -8,34 +8,42 @@ Grab the large file under "release...latest" for all source and data, or try thi
 https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.4/co5dec17.tar.gz
 
 
+
+
+
 # CoTerminalApps
 
 ## What's new:
 
-Video showing BlockSlider Autosolve:
-https://youtu.be/dD3VGbXv3ng
+
+**ver 1.1.6 -- 10dec17**
+
+* improved pacman (cpac);
+* all games now runnable from home or bin/./ directory;
+* The script hipri.bat for Windows was added to fix terminal-freezes by opening a high priority command window for console games.
+* Also added scripts hipr.sh (linux & OSX) to run at high priority using "nice", if necessary.
 
 
 
 **ver 1.1.5 -- 5dec17**
 
-* added DLLs needed under Windows;
+* added missing DLLs;
 * now using the intrinsic file detection function:  Exists();
 * elliminated need for directory links, simplifying Windows install.
 * huge performance improvements by not erasing screens between redraws.
 
-
-**ver 1.1.4 -- 26oct17**
-
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
+**ver 1.1.4 -- 29oct17**
 
 
 ===============================================================
 ## Introduction
-CoTerminalApps contains color-terminal [command-prompt] games that run on msWindows, OS-X and Gnu/Linux, and can also be rebuilt after installing the GNAT GPL Ada compiler.  The only difference from TerminalApps is the use of the gnat library gnatcoll to enable colored characters, which makes many games/puzzles easier to understand.
+CoTerminalApps contains colored-ascii-character games that run in a commandline terminal on msWindows, OS-X and Gnu/Linux. 
 
-Includes Pacman and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
+They can also be rebuilt after installing the GNAT GPL Ada compiler.  
+
+The only difference from TerminalApps is the use of the gnat library gnatcoll to enable colored characters, which makes many games/puzzles easier to understand.
+
+Includes RPNcalc, Pacman and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
 
 Usable keys for all:
 
@@ -43,13 +51,31 @@ Usable keys for all:
 * (q)=quit
 * (?)=help toggle
 
+Windows games are all located in .\bin\win\;
+Mac games are in ./bin/osx/;
+Linux games are in ./bin/gnu/;
+
+For example, to play rush-hour on a Mac you would type:
+bin/osx/crush
+or else cd to ./bin/osx/ then type
+crush
 
 ===========================================================================
 
 ### CoTerminal-pacman (cpac.adb)
 A primitive version of Pacman with 9 predefined levels.
 
-For this game, keyboard setup is critical to playability.  One must have a very short key-delay and fast repeat setting.  The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.  Note that there is a parameter called "tick" inside cpac.adb that is currently set to 0.2 seconds.  Advanced users might want to adjust this number, then recompile.  It controls game speed (smaller implies faster).  Suggestions are welcome.
+For this game, keyboard setup is critical to playability.  One must have a short key-delay and fast repeat setting.  The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.
+
+Executable can now be given 2 optional command line parameters:
+	* Game Speed 0..9;  0=slow, 5=default=medium, 9=fast;
+	* Ghost Speed 0..9;  0=stopped, 2=default=easy, 9=fast
+
+So on windows, the command:
+"bin\win\cpac 5 2" 
+gives default settings, same as giving no parameters:
+"bin\win\cpac" 
+
 
 
 ### CoTerminal-Rush (crush.adb)
@@ -127,6 +153,27 @@ Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 ### CoTerminal-Nine (c9.adb)
 Reverse the order of the numbered blocks.
 
+### RPN (reverse polish notation) command line calculator
+A cult classic.  Recalls the HP rpn functionality.  Type "rpn".
+
+
+
+===============================================================
+## Running:
+
+First resize the terminal as needed.  Your terminal must be 50 chars wide by 20 lines (57x35 for pacman).  
+
+You might want to enlarge the Font so that the window becomes physically larger.  
+
+Simply type the executable name to begin.  
+
+For example, on OSX, you would open a terminal, and cd to the install directory and type:  ./bin/osx/csok   to run the Sokoban game.  You could also cd to the executable directory ./bin/osx/ then type:  csok.
+
+NOTE:  Windows users should probably CD to .\bin\win\ then run the script "hipri.bat" to open a realtime-priority window in which to run apps.  (It seems that some hardware may cause terminal freezes at normal priority.)
+
+Similarly for Linux/OSX users, you can CD to ./bin/gnu/ then use the "nice" command to be a bit less nice and give each terminal game the highest real time priority.  For example, to run traffic rush at high priority type:  "nice --adjustment=-20 crush".  See ~/bin/gnu/hipr.sh, ~/bin/osx/hipr.sh
+
+
 
 ===========================================================================
 ## Compiler Scripts
@@ -144,16 +191,14 @@ Next, edit the scripts wcmp.bat or lcmp.sh or ocmp.sh so that the path to gnatma
 Then type "[wlo]buildall" to create new command-line executables for your system.
 
 
-
 ===============================================================
-## Running:
-Your terminal must be at least 50 chars wide by 20 lines (at least 57x35 for pacman).  Simply type the executable name to begin.
+## What is special about this project?
+* portability, transparency, and open source freedom;
+* uses GNAT GPL;
+* for developers, the Ada code is easy to understand;
+* essentially no graphics, and no user interface;
 
-For example, on OSX, you would open a terminal, and cd to the install directory and type:
 
-./bin/osx/csok
-
-to run the Sokoban game.
 
 
 ===============================================================
@@ -187,9 +232,22 @@ Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, af
 ## Best Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
 
+## Video BlockSlider Autosolve:
+https://youtu.be/dD3VGbXv3ng
 
 --------------------------------------------------
 ## Earlier Revision History:
+
+
+**ver 1.1.4 -- 29oct17**
+
+* added RPN calculator;
+
+
+**ver 1.1.4 -- 26oct17**
+
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
 
 
 **ver 1.1.3 -- 18oct17**
@@ -271,7 +329,6 @@ https://github.com/fastrgv?tab=repositories
 **ver 1.0.0 -- 28jun16**
 
 * original release.
-
 
 
 
