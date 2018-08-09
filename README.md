@@ -15,6 +15,10 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.6/co10dec.tar.g
 
 ## What's new:
 
+**ver 1.1.7 -- 09aug18**
+
+* Fixed csok to handle DOS-format resume file.
+* Corrected errors in autosolvers for rush & dirtydozen;
 
 **ver 1.1.6 -- 10dec17**
 
