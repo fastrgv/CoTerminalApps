@@ -14,6 +14,13 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.7/co9aug18.tar.
 
 ## What's new:
 
+**ver 1.1.8 -- 25nov18**
+
+* Improved csok autosolver;
+* Improved autosolvers for crush, cslid, cdd.
+* Corrected error in autoselect logic;
+
+
 **ver 1.1.7 -- 09aug18**
 
 * Fixed csok to handle DOS-format resume file.
