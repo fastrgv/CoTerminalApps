@@ -14,6 +14,12 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.1.8/co25nov18.tar
 
 ## What's new:
 
+**ver 1.1.9 -- 30nov18**
+
+* Made big improvement in Windows keyboard response by setting realtime mode programmatically.
+
+
+
 **ver 1.1.8 -- 25nov18**
 
 * Improved csok autosolver;
