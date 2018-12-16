@@ -178,7 +178,12 @@ A cult classic.  Recalls the HP rpn functionality.  Type "rpn".
 
 
 ===============================================================
-## Running:
+## Setup & Running:
+
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this;  but so does the intrinsic command "tar -xf [filename].tar.gz", which extracts everything into the current directory.
+
+Windows users may see some error messages (that may be ignored) pertaining to directory links.  Directory links are needed only on OSX & Linux.
+
 
 First resize the terminal as needed.  Your terminal must be 50 chars wide by 20 lines (57x35 for pacman).  
 
