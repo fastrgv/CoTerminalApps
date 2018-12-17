@@ -9,6 +9,16 @@ and the ./adabindings & ./adautils sub-directories.
 
 =====================================================================
 Note for Windows users:
+
+I decided to deliver tarballs because it is the normal way on
+OSX and Linux, and because I tried 4 ways to extract them on
+Windows, all of which worked smoothly:
+.) PeaZip;
+.) WinZip [demo];
+.) 7-Zip;
+.) tar [on recent versions of Windows]
+
+
 I suggest using 7z [from www.7-zip.org] to unzip, 
 and then untar the files <name.tar.gz>:
 
