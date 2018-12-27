@@ -1,0 +1,21 @@
+
+Setup on OS-X
+
+
+If you have a previous installation of the game on your computer, 
+then delete it by typing something like:
+
+	rm -fr <game-installation-directory>/<game-dir>
+
+This will save space on your computer's disk drive, and will 
+help to avoid confusion.  Each download is self-contained.
+
+Choose an installation directory and move the tarball there;  
+leaving it in ./Downloads is fine.
+
+For *.7z files, you may use Keka or 7zip to unpack the tarred 
+game directory.
+
+For *.gz files, simply gunzip [] followed by tar -xf [].
+
+
