@@ -17,7 +17,7 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.2.0/co29dec18.7z
 
 **ver 1.2.0 -- 29dec18**
 
-* Now request only high-priority rather than realtime-priority;
+* Now request only high-priority rather than realtime-priority on Windows;
 * Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
 
 
