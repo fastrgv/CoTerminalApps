@@ -68,7 +68,7 @@ crush
 
 ### CoTerminal-pacman (cpac.adb)
 
-A primitive version of Pacman with 9 predefined levels.
+A primitive, silent version of Pacman with 9 predefined levels.
 
 For this game, keyboard setup is critical to playability.  One must have a short key-delay and fast repeat setting.  The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.
 
