@@ -1,0 +1,14 @@
+My Design Goals (for Potential Contributors):
+
+I dislike both Microsoft and Apple because of the freedoms and privacy they deny me, and I fully support the F.S.F.  Thusly, I choose to minimize my involvment with their esoteric OS's.  Still, I want to reach their large audiences with my programs.
+
+My design goals are to 
+A) require NOTHING of mere users, and 
+B) for rebuilders/developers, require only that they install Ada on their machines.
+
+Specifically, I do not wish to require Windows users to install MINGW.  Thusly, and for other reasons, I choose to avoid Makefiles.  Gpr build files are fine, but I am more familiar with script/bat files.
+
+Furthermore, I do not wish to require users to install nonstandard libraries or 3rd party utilities in order to execute my apps.
+
+(fastrgv@gmail.com)
+
