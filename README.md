@@ -10,28 +10,24 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.2.0/co29dec18.7z
 
 
 
+
 # CoTerminalApps
 
 ## What's new:
+
+
+**ver 1.2.1 -- 20aug19**
+
+* Improved csok autosolver;  and enabled a second method;
+* Added optional csok parameter to set default autosolve timeout;
+* Updated RPN calculators to include error estimates;
+* Corrected behavior in csok,cdd,crush,cslid;
 
 
 **ver 1.2.0 -- 29dec18**
 
 * Now request only high-priority rather than realtime-priority on Windows;
 * Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
-
-
-**ver 1.1.9 -- 30nov18**
-
-* Significant improvement to keyboard response for MsWin by setting realtime mode programmatically.
-
-
-**ver 1.1.8 -- 25nov18**
-
-* Improved csok autosolver;
-* Improved autosolvers for crush, cslid, cdd.
-* Corrected error in autoselect logic;
-
 
 
 ===============================================================
@@ -45,13 +41,13 @@ They can also be rebuilt after installing the GNAT GPL Ada compiler.
 
 The only difference from TerminalApps is the use of the gnat library gnatcoll to enable colored characters, which makes many games/puzzles easier to understand.
 
-Includes RPNcalc, Pacman and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
+Includes rpn(calculator), cpac(Pacman) and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
 
-Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
+Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting.  
 
 Usable keys for all:
 
-* arrow-keys for movement;
+* arrow-keys or WASD or IJKL for movement;
 * (q)=quit
 * (?)=help toggle
 
@@ -107,11 +103,11 @@ First, one selects a vehicle or block by typing its identifier letter.  Then use
 
 
 ===============================================================
-### CoTerminal Seven, A2Z (c7.adb, caz.adb)
+### Seven, A2Z (c7.adb, caz.adb)
 
-c7 is a flat representation of a 2x2x2 cube with one missing that allows sliding permutations.  Here, the 8-1 elements are labelled 1..7.
+c7 is a flat representation of a 3D 2x2x2 cube with one cubelet missing that allows sliding permutations.  Here, the elements are labelled 1..7.
 
-caz is a flat representation of a 3x3x3 cube with one missing that allows sliding permutations.  The 27-1 elements are conveniently labelled with the english alphabet.
+caz is a flat representation of a 3x3x3 cube with one cubelet missing that allows sliding permutations.  The elements are labelled with the english alphabet.
 
 Both the "caz" and "c7" puzzles work the same:
 
@@ -143,14 +139,15 @@ the key mapping follows:
 ### CoTerminal-sokoban (csok.adb)
 Move the pusher >< with the arrow keys in order to push all the boxes [] onto the goals :: in which case they look like {}.  Various other functions available on the help screen.  Includes a very large family of puzzle files.
 
-Two [external] sokoban solvers named puller & ibox have been added.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name.
+Two [external] sokoban solvers named iplr3r & ibox3r have been added.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name.
 
-The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.  Compile it with the command "cmp.sh puller" or "cmp.sh ibox".
+The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.  Compile it with the command "cmp.sh iplr3r" or "cmp.sh ibox3r".
 
-There are many cases these solvers cannot handle, but they are pretty good at sovling certain types of puzzles, particularly the more dense ones.
+There are many cases these solvers cannot handle, but they are pretty good at sovling smaller puzzles, particularly the more dense ones.
 
-But now a time-limited solver is embedded into csok.  At any time you may press the (=)-key to see if the solver can help you.  If so, you will be prompted to keep pressing that same key to proceed toward a solution.  No prompt means either the present state is unsolvable, or merely that the embedded algorithm failed.
+Two time-limited solvers are embedded into csok.  At any time you may press the (=)-key to see if the solver #1 can help you.  If so, you will be prompted to keep pressing that same key to proceed toward a solution.  No prompt means either the present state is unsolvable, or merely that the embedded algorithm failed.  Similarly, the (.)-key initiates solver #2.
 
+Finally, an optional single command-line argument (decimal float) specifies a timeout interval to wait for the internal autosolver before giving up.  The default is 10.0 seconds.
 
 ### CoTerminal-HoleInOne (chio.adb, chio4.adb)
 Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
@@ -159,7 +156,7 @@ Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 Reverse the order of the numbered blocks.
 
 ### RPN (reverse polish notation) command line calculator
-A cult classic.  Recalls the HP rpn functionality.  Type "rpn".
+A cult classic.  Recalls the HP rpn functionality.  Type "rpn".  This version uses differentials to calculate an error estimate.
 
 
 
@@ -179,14 +176,13 @@ Minimize the size of your terminal window.  Your terminal must be 50 chars wide 
 
 Enlarge the Font so that the window fills your monitor.
 
-Simply type the executable name to begin.  
+On OSX or Linux, you can type "hipr.sh" to elevate the runtime priority of all terminal applications prior to runtime.
+
+Similary, on Windows you can CD to .\bin\win\ then run "hipri.bat".  But now, this should no longer be necessary since the priority is elevated automatically by all the Windows apps.
+
+Then, simply type the executable name to begin.  
 
 For example, on OSX, you would open a terminal, and cd to the install directory and type:  ./bin/osx/csok   to run the Sokoban game.  You could also cd to the executable directory ./bin/osx/ then type:  csok.
-
-NOTE:  Windows users should probably CD to .\bin\win\ then run the script "hipri.bat" to open a realtime-priority window in which to run apps.  (It seems that some hardware may cause terminal freezes at normal priority.)  If that does not work, and the response is poor, try using the command "start /realtime [game].exe" where [game] is one of {c7,c9,caz,cdd,chio4,chio,cpac,crush,cslid,csok}
- 
-
-Similarly for Linux/OSX users, you can CD to ./bin/gnu/ then use the "nice" command to be a bit less nice and give each terminal game the highest real time priority.  For example, to run traffic rush at high priority type:  "nice --adjustment=-20 crush".  See ~/bin/gnu/hipr.sh, ~/bin/osx/hipr.sh
 
 
 
@@ -252,6 +248,18 @@ https://youtu.be/dD3VGbXv3ng
 
 --------------------------------------------------
 ## Earlier Revision History:
+
+**ver 1.1.9 -- 30nov18**
+
+* Significant improvement to keyboard response for MsWin by setting realtime mode programmatically.
+
+
+**ver 1.1.8 -- 25nov18**
+
+* Improved csok autosolver;
+* Improved autosolvers for crush, cslid, cdd.
+* Corrected error in autoselect logic;
+
 
 **ver 1.1.7 -- 13aug18**
 
@@ -365,5 +373,7 @@ https://youtu.be/dD3VGbXv3ng
 **ver 1.0.0 -- 28jun16**
 
 * original release.
+
+
 
 
