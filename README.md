@@ -5,7 +5,7 @@ Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v1.2.2/co24aug19.7z
+https://github.com/fastrgv/CoTerminalApps/releases/download/v1.2.2/co27aug19.7z
 
 
 
@@ -17,6 +17,7 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.2.2/co24aug19.7z
 **ver 1.2.2 -- 24aug19**
 
 * Improved sokoban autosolvers (csok);
+* Fixed slow key response in Windows;
 
 
 **ver 1.2.1 -- 20aug19**
@@ -181,7 +182,7 @@ Enlarge the Font so that the window fills your monitor.
 
 On OSX or Linux, you can type "hipr.sh" to elevate the runtime priority of all terminal applications prior to runtime.
 
-Similary, on Windows you can CD to .\bin\win\ then run "hipri.bat".  But now, this should no longer be necessary since the priority is elevated automatically by all the Windows apps.
+Similary, on Windows you can CD to .\bin\win\ then run "hipri.bat". 
 
 Then, simply type the executable name to begin.  
 
