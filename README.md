@@ -14,6 +14,10 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.2.2/co27aug19.7z
 
 ## What's new:
 
+**ver 1.2.4 -- 31aug19**
+
+* Refined redraws for speed & correctness;  minimized cls.
+
 **ver 1.2.2 -- 24aug19**
 
 * Improved sokoban autosolvers (csok);
