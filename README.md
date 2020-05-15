@@ -10,36 +10,30 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v1.2.4/co31aug19.7z
 
 
 
+
 # CoTerminalApps
 
 ## What's new:
+
+
+
+**ver 2.0.0 -- 15may20**
+
+* Added Sound!
+* Added Frogger!
+* Made sure EXEs run from their own directory, as well as the base directory.
+* Replaces/superceeds: MiniPacman, TermFrogger, & TerminalApps.
+
 
 **ver 1.2.4 -- 31aug19**
 
 * Refined redraws for speed & correctness;  minimized cls.
 
-**ver 1.2.2 -- 24aug19**
-
-* Improved sokoban autosolvers (csok);
-* Fixed slow key response in Windows;
-
-
-**ver 1.2.1 -- 20aug19**
-
-* Improved csok autosolver;  and enabled a second method;
-* Added optional csok parameter to set default autosolve timeout;
-* Updated RPN calculators to include error estimates;
-* Corrected behavior in csok,cdd,crush,cslid;
-
-
-**ver 1.2.0 -- 29dec18**
-
-* Now request only high-priority rather than realtime-priority on Windows;
-* Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
-
 
 ===============================================================
 ## Introduction
+
+Now with sound but still extremely portable.
 
 CoTerminalApps contains colored-ascii-character games that run in a commandline terminal on msWindows, OS-X and Gnu/Linux.
 
@@ -49,7 +43,7 @@ They can also be rebuilt after installing the GNAT GPL Ada compiler.
 
 The only difference from TerminalApps is the use of the gnat library gnatcoll to enable colored characters, which makes many games/puzzles easier to understand.
 
-Includes rpn(calculator), cpac(Pacman) and 9 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpac(Pacman)
+Includes rpn(calculator), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama);
 
 Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting.  
 
@@ -62,6 +56,7 @@ Usable keys for all:
 Windows games are all located in .\bin\win\;
 Mac games are in ./bin/osx/;
 Linux games are in ./bin/gnu/;
+(...they are meant to be run from the top level directory)
 
 For example, to play rush-hour on a Mac you would type:
 bin/osx/crush
@@ -69,22 +64,6 @@ or else cd to ./bin/osx/ then type
 crush
 
 ===========================================================================
-
-### CoTerminal-pacman (cpac.adb)
-
-A primitive, silent version of Pacman with 9 predefined levels.
-
-For this game, keyboard setup is critical to playability.  One must have a short key-delay and fast repeat setting.  The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.
-
-Executable can now be given 2 optional command line parameters:
-	* Game Speed 0..9;  0=slow, 5=default=medium, 9=fast;
-	* Ghost Speed 0..9;  0=stopped, 2=default=easy, 9=fast
-
-So on windows, the command:
-"bin\win\cpac 5 2" 
-gives default settings, same as giving no parameters:
-"bin\win\cpac" 
-
 
 
 ### CoTerminal-Rush (crush.adb)
@@ -166,6 +145,44 @@ Reverse the order of the numbered blocks.
 ### RPN (reverse polish notation) command line calculator
 A cult classic.  Recalls the HP rpn functionality.  Type "rpn".  This version uses differentials to calculate an error estimate.
 
+### Pacman (cpac)
+Pacman, is a kid friendly ascii character version of Pacman that plays in a commandline terminal.  Pure minimalism with classic sounds and 9 predefined levels.  
+
+Now with runtime-priority control to prevent terminal freezes, plus commandline control of gamespeed & ghostspeed.
+
+Runs on Windows, OSX & Linux.
+
+Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
+
+The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.
+
+Includes executables and source code.  Note that this game does NOT require an ncurses library in your environment.
+
+cpac can be given 2 optional command line parameters:
+	*) game speed 0..9; 0=slow, 5=default=medium, 9=fast;
+	*) ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast;
+
+Before running cpac, it is recommended to resize your terminal to 60 chars. wide by 40 lines tall; then, perhaps, enlarge the font.
+
+
+
+### Frogger (cfrog)
+Terminal frogger is a kid friendly ascii character version of Frogger that plays in a commandline terminal.  Pure minimalism with classic sounds and three levels.
+
+@@@@ is a raft of lillypads, 
+QQQQ is a team of turtles, 
+==== is a log, 
+TTT is a truck, 
+ccc is a car.
+
+Runs on Windows, OSX & Linux.
+
+Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
+
+The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit.
+
+Before running cfrog, it is recommended to resize your terminal to 56 chars. wide by 21 lines tall; then, perhaps, enlarge the font.
+
 
 
 ===============================================================
@@ -177,21 +194,19 @@ Windows users see "windows-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
-
 Ensure your keyboard has a short key-delay and fast repeat.
 
-Minimize the size of your terminal window.  Your terminal must be 50 chars wide by 20 lines (57x35 for pacman).  
+Minimize the size of your terminal window.  Your terminal must be 60 chars wide by 40 lines for pacman, smaller for others.  
 
 Enlarge the Font so that the window fills your monitor.
 
-On OSX or Linux, you can type "hipr.sh" to elevate the runtime priority of all terminal applications prior to runtime.
+On OSX or Linux, you can type "hipr.sh" to elevate the runtime priority of all terminal applications prior to runtime, but is usually not necessary.
 
-Similary, on Windows you can CD to .\bin\win\ then run "hipri.bat". 
+Similary, on Windows you can CD to .\bin\win\ then run "hipri.bat".
 
 Then, simply type the executable name to begin.  
 
 For example, on OSX, you would open a terminal, and cd to the install directory and type:  ./bin/osx/csok   to run the Sokoban game.  You could also cd to the executable directory ./bin/osx/ then type:  csok.
-
 
 
 ===========================================================================
@@ -201,21 +216,24 @@ There are three scripts, wbuildall.bat for msWindows, lbuildall.sh for Linux, an
 
 ===============================================================
 ## Build Instructions:
-Remember that prebuilt executables are already included.  If you want to rebuild...
+Remember that prebuilt executables are already included. But, if you want to rebuild...
 
 Manually install GNAT GPL from libre.adacore.com/download/.  If you don't like my key-mappings, edit the code as you like.
 
 Next, edit the scripts wcmp.bat or lcmp.sh or ocmp.sh so that the path to gnatmake is correct.  These scripts streamline the build process by allowing auxilliary files to be neatly hidden in subdirectories.  And make sure it is executable.
 
-Then type "[wlo]buildall" to create new command-line executables for your system.
+Then type "[wlo]buildall" to create new command-line executables for your system. ( w for Windows, l for Linux, o for OSX). Note that on OSX, you must have the Apple-Xcode g++ compiler present in order to rebuild.
 
 
 ===============================================================
-## What is special about this project?
-* portability, transparency, and open source freedom;
-* uses GNAT GPL;
-* for developers, the Ada code is easy to understand;
-* essentially no graphics, and no user interface;
+
+## What is special about this project?...freedom...
+* uses the Ada programming language & GNAT GPL;
+* runs on Windows, OSX, & Linux;
+* uses only free open source software [F.O.S.S] tools & libraries;
+* portable, transparent code, easy to modify, rebuild;
+* uses SFML-Audio and Ogg-Vorbis libs for sounds;
+* pure minimalism:  no graphics, just ASCII characters, keyboard, & sound;
 
 
 
@@ -225,7 +243,7 @@ Then type "[wlo]buildall" to create new command-line executables for your system
 
 CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
 
- Copyright (C) 2017  <fastrgv@gmail.com>
+ Copyright (C) 2020  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -248,6 +266,12 @@ Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plu
 Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, after which this Ada version was modelled (gnu gpl).
 
 ----------------------------------------------
+
+## Thanks to:
+Mike Billars [michael@gmail.com] for his [gnu gpl] C-version of Pacman for the console, after which this Ada version was modelled.
+
+
+----------------------------------------------
 ## Best Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
 
@@ -256,6 +280,30 @@ https://youtu.be/dD3VGbXv3ng
 
 --------------------------------------------------
 ## Earlier Revision History:
+
+**ver 1.2.3 -- 27aug19**
+
+* Fixed slow key-response in Windows.
+
+
+**ver 1.2.2 -- 24aug19**
+
+* Improved sokoban autosolvers (csok);
+
+
+**ver 1.2.1 -- 20aug19**
+
+* Improved csok autosolver;  and enabled a second method;
+* Added optional csok parameter to set default autosolve timeout;
+* Updated RPN calculators to include error estimates;
+* Corrected behavior in csok,cdd,crush,cslid;
+
+
+**ver 1.2.0 -- 29dec18**
+
+* Now request only high-priority rather than realtime-priority on Windows;
+* Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
+
 
 **ver 1.1.9 -- 30nov18**
 
@@ -381,6 +429,7 @@ https://youtu.be/dD3VGbXv3ng
 **ver 1.0.0 -- 28jun16**
 
 * original release.
+
 
 
 
