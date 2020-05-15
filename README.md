@@ -21,7 +21,7 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.0.0/co15may20.7z
 
 * Added Sound!
 * Added Frogger!
-* Made sure EXEs run from their own directory, as well as the base directory.
+* Made sure EXEs run from their own directory, as well as the top-level directory.
 * Replaces/superceeds: MiniPacman, TermFrogger, & TerminalApps.
 
 
