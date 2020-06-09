@@ -16,6 +16,10 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.0.0/co15may20.7z
 ## What's new:
 
 
+**ver 2.0.1 -- 10jun20**
+
+* Fixed blank screen problems due to coding error.
+
 
 **ver 2.0.0 -- 15may20**
 
