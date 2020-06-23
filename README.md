@@ -15,21 +15,21 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.0.2/co17jun20.7z
 
 ## What's new:
 
+**ver 2.0.3 -- 23jun20**
+* Added game-launcher apps:  winterm.bat, macterm.sh, gnuterm.sh.
+
 **ver 2.0.2 -- 17jun20**
 * Enhanced keystroke robustness;
 * Enhanced puzzle coloring;
 
-
 **ver 2.0.1 -- 10jun20**
 * Fixed blank screen problems due to coding error.
-
 
 **ver 2.0.0 -- 15may20**
 * Added Sound!
 * Added Frogger!
 * Made sure EXEs run from their own directory, as well as the top-level directory.
 * Replaces/superceeds: MiniPacman, TermFrogger, & TerminalApps.
-
 
 **ver 1.2.4 -- 31aug19**
 * Refined redraws for speed & correctness;  minimized cls.
