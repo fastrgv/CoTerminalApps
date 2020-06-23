@@ -58,15 +58,12 @@ Usable keys for all:
 * (q)=quit
 * (?)=help toggle
 
-Windows games are all located in .\bin\win\;
-Mac games are in ./bin/osx/;
-Linux games are in ./bin/gnu/;
-(...they are meant to be run from the top level directory)
+All puzzles & games can now be launched from the selector app thusly:
 
-For example, to play rush-hour on a Mac you would type:
-bin/osx/crush
-or else cd to ./bin/osx/ then type
-crush
+Windows:	winterm.bat
+Mac/OSX:	macterm.sh
+Linux:	gnuterm.sh
+
 
 ===========================================================================
 
@@ -205,13 +202,12 @@ Minimize the size of your terminal window.  Your terminal must be 60 chars wide 
 
 Enlarge the Font so that the window fills your monitor.
 
-On OSX or Linux, you can type "hipr.sh" to elevate the runtime priority of all terminal applications prior to runtime, but is usually not necessary.
+To launch the game selector, depending on your system, type:
 
-Similary, on Windows you can CD to .\bin\win\ then run "hipri.bat".
+winterm
+macterm.sh
+gnuterm.sh
 
-Then, simply type the executable name to begin.  
-
-For example, on OSX, you would open a terminal, and cd to the install directory and type:  ./bin/osx/csok   to run the Sokoban game.  You could also cd to the executable directory ./bin/osx/ then type:  csok.
 
 
 ===========================================================================
