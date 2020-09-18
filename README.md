@@ -60,10 +60,12 @@ Usable keys for all:
 * (q)=quit
 * (?)=help toggle
 
-All puzzles & games can now be launched from the selector app thusly:
+All puzzles & games can now be launched from the selector app, initiated thusly:
 
 Windows:	winterm.bat
+
 Mac/OSX:	macterm.sh
+
 Linux:	gnuterm.sh
 
 
