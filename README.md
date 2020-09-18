@@ -1,5 +1,7 @@
 ![screenshot](https://github.com/fastrgv/CoTerminalApps/blob/master/crush.jpg)
 
+![screenshot](https://github.com/fastrgv/CoTerminalApps/blob/master/puzzles.png)
+
 # CoTerminalApps
 Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX, & Linux.
 
