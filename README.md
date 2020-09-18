@@ -237,7 +237,8 @@ Then type "[wlo]buildall" to create new command-line executables for your system
 * runs on Windows, OSX, & Linux;
 * uses only free open source software [F.O.S.S] tools & libraries;
 * portable, transparent code, easy to modify, rebuild;
-* uses SFML-Audio and Ogg-Vorbis libs for sounds;
+* uses SFML-Audio for sounds on OSX & Windows;
+* uses alternate sound system for Linux that is portable across distros.
 * pure minimalism:  no graphics, just ASCII characters, keyboard, & sound;
 
 
