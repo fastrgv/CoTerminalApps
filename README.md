@@ -13,44 +13,30 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.0.3/co23jun20.7z
 
 
 
+
 # CoTerminalApps
 
 ## What's new:
 
+**ver 2.0.4 -- 22sep20**
+* Game-launcher now allows (return)-key to select, uses improved colors.
+
 **ver 2.0.3 -- 23jun20**
-* Added game-launcher apps:  winterm.bat, macterm.sh, gnuterm.sh.
-
-**ver 2.0.2 -- 17jun20**
-* Enhanced keystroke robustness;
-* Enhanced puzzle coloring;
-
-**ver 2.0.1 -- 10jun20**
-* Fixed blank screen problems due to coding error.
-
-**ver 2.0.0 -- 15may20**
-* Added Sound!
-* Added Frogger!
-* Made sure EXEs run from their own directory, as well as the top-level directory.
-* Replaces/superceeds: MiniPacman, TermFrogger, & TerminalApps.
-
-**ver 1.2.4 -- 31aug19**
-* Refined redraws for speed & correctness;  minimized cls.
+* All apps are now launched using a single command.
 
 
 ===============================================================
 ## Introduction
 
-Now with sound but still extremely portable.
+CoTerminalApps is a collection of non-graphical, colored-ascii-character puzzles & games that run in a commandline terminal on msWindows, OS-X and Gnu/Linux. Now with sound but still extremely portable.
 
-CoTerminalApps contains colored-ascii-character games that run in a commandline terminal on msWindows, OS-X and Gnu/Linux.
+Has runtime-priority control of console terminal, if needed.
 
-Now with runtime-priority control of console terminal, if needed.
-
-They can also be rebuilt after installing the GNAT GPL Ada compiler.  
-
-The only difference from TerminalApps is the use of the gnat library gnatcoll to enable colored characters, which makes many games/puzzles easier to understand.
+Rebuildable using the free GNAT GPL Ada compiler.  
 
 Includes rpn(calculator), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama);
+
+See a visual of the 10 puzzles in the image "./puzzles.png".
 
 Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting.  
 
@@ -60,13 +46,15 @@ Usable keys for all:
 * (q)=quit
 * (?)=help toggle
 
-All puzzles & games can now be launched from the selector app, initiated thusly:
+All puzzles & games can now be launched from the selector app thusly:
 
-Windows:	winterm.bat
+On Windows type "winterm.bat"
 
-Mac/OSX:	macterm.sh
+On Mac/OSX type "macterm.sh"
 
-Linux:	gnuterm.sh
+On Linux type "gnuterm.sh"
+
+Then use the keyboard arrow keys to highlight the desired game, and hit (enter)-key.
 
 
 ===========================================================================
@@ -149,7 +137,7 @@ Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 Reverse the order of the numbered blocks.
 
 ### RPN (reverse polish notation) command line calculator
-A cult classic.  Recalls the HP rpn functionality.  Type "rpn".  This version uses differentials to calculate an error estimate.
+A cult classic.  Recalls the HP rpn functionality. This version uses differentials to calculate an error estimate.
 
 ### Pacman (cpac)
 Pacman, is a kid friendly ascii character version of Pacman that plays in a commandline terminal.  Pure minimalism with classic sounds and 9 predefined levels.  
@@ -206,12 +194,17 @@ Minimize the size of your terminal window.  Your terminal must be 60 chars wide 
 
 Enlarge the Font so that the window fills your monitor.
 
-To launch the game selector, depending on your system, type:
+To launch the game selector App, depending on your system, type:
 
-winterm
+winterm.bat
+
+or
 macterm.sh
+
+or
 gnuterm.sh
 
+Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
 
 
 ===========================================================================
@@ -238,8 +231,8 @@ Then type "[wlo]buildall" to create new command-line executables for your system
 * uses only free open source software [F.O.S.S] tools & libraries;
 * portable, transparent code, easy to modify, rebuild;
 * uses SFML-Audio for sounds on OSX & Windows;
-* uses alternate sound system for Linux that is portable across distros.
-* pure minimalism:  no graphics, just ASCII characters, keyboard, & sound;
+* uses an alternate sound system for linux that is portable across distros.
+* pure minimalism:  no graphics, just colored ASCII characters, keyboard, & sound;
 
 
 
@@ -272,9 +265,11 @@ Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plu
 Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, after which this Ada version was modelled (gnu gpl).
 
 ----------------------------------------------
-
-## Thanks to:
-Mike Billars [michael@gmail.com] for his [gnu gpl] C-version of Pacman for the console, after which this Ada version was modelled.
+### SoundFiles [x.wav]
+Fanfare/Applause sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt. Others from 
+* classicgaming.cc/classics/pac-man/sounds
+* classicgaming.cc/classics/frogger/sounds
+(also CreativeCommons).
 
 
 ----------------------------------------------
@@ -285,157 +280,20 @@ https://github.com/fastrgv?tab=repositories
 https://youtu.be/dD3VGbXv3ng
 
 --------------------------------------------------
-## Earlier Revision History:
-
-**ver 1.2.3 -- 27aug19**
-
-* Fixed slow key-response in Windows.
-
-
-**ver 1.2.2 -- 24aug19**
-
-* Improved sokoban autosolvers (csok);
-
-
-**ver 1.2.1 -- 20aug19**
-
-* Improved csok autosolver;  and enabled a second method;
-* Added optional csok parameter to set default autosolve timeout;
-* Updated RPN calculators to include error estimates;
-* Corrected behavior in csok,cdd,crush,cslid;
-
-
-**ver 1.2.0 -- 29dec18**
-
-* Now request only high-priority rather than realtime-priority on Windows;
-* Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
-
-
-**ver 1.1.9 -- 30nov18**
-
-* Significant improvement to keyboard response for MsWin by setting realtime mode programmatically.
-
-
-**ver 1.1.8 -- 25nov18**
-
-* Improved csok autosolver;
-* Improved autosolvers for crush, cslid, cdd.
-* Corrected error in autoselect logic;
-
-
-**ver 1.1.7 -- 13aug18**
-
-* Fixed csok to handle DOS-format resume file.
-* Corrected errors in autosolvers for rush & dirty12;
-
-
-**ver 1.1.6 -- 10dec17**
-
-* improved pacman (cpac);
-* all games now runnable from home or bin/./ directory;
-* The script hipri.bat for Windows was added to fix terminal-freezes by opening a high priority command window for console games.
-* Also added scripts hipr.sh (linux & OSX) to run at high priority using "nice", if necessary.
-
-
-**ver 1.1.5 -- 5dec17**
-
-* added missing DLLs;
-* now using the intrinsic file detection function:  Exists();
-* elliminated need for directory links, simplifying Windows install.
-* huge performance improvements by not erasing screens between redraws.
-
-
-**ver 1.1.4 -- 29oct17**
-
-* added RPN calculator;
-
-
-**ver 1.1.4 -- 26oct17**
-
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
-
-
-**ver 1.1.3 -- 18oct17**
-
-* added keymaps for IJKL, WASD, when possible, eg. pacman;
-* minor correction to compilation scripts;
-* pacman (cpac):
-	* now enqueue ONLY valid moves;
-	* corrected, improved, simplified movement logic;
-* major update to OSX libraries to AdaCore 2017;
-* now uses static libraries to simplify build process and enhance robustness;
-
-
-**ver 1.1.2 -- 2may17**
-
-* added DirtyDozen [external] solver (bfsl.adb) that handles L-shaped blocks.
-* embedded autosolvers initiated by the (=)-key into:
-	* cdd (DirtyDozen)
-	* crush (TrafficRush)
-	* cslid (BlockSliders)
-	* csok (Sokoban)
-
-
-**ver 1.1.1 -- 7jan17**
-
-* Added missing libraries for the Gnu/Linux prebuilt binaries.  They should now run even without installing the GNAT GPL Ada compiler, or the GNATColl libraries.
-* Still, for MSWin and other OS's, one must install GNAT and rebuild.
-
-**ver 1.1.0 -- 5jan17**
-
-* Now supply prebuild binaries for OS-X and Linux;
-* Improved build system.
-
-
-**ver 1.0.7 -- 20aug16**
-
-* added two sokoban solvers (puller.adb, ibox.adb).
-* added cslid solver (bfs.adb).
-* added crush solver (bfsr.adb)
-* improved pacman gameplay, collision-detection, randomization.
-
-
-**ver 1.0.6 -- 27jul16**
-
-* added CoTerminal-DirtyDozen block slider (cdd.adb)
-* added CoTerminal-Nine by Grabarchuk (c9.adb)
-* improvements in csok::Draw that include speedup option (s-key).
-* added restart option to cslid.adb, crush.adb
-* added CoTerminal-Pacman (cpac.adb)
-
-
-**ver 1.0.5 -- 16jul16**
-
-* added HoleInOne, HoleInOne+4 (chio.adb, chio4.adb)
-* small improvement to sokoban key response.
-
-
-**ver 1.0.4 -- 11jul16**
-
-* fixed logic error in CoTerminalRush (crush.adb).
-
-
-**ver 1.0.3 -- 5jul16**
-
-* added csok game.
-
-
-**ver 1.0.2 -- 4jul16**
-
-* Added caz, c7 puzzle games.
-
-
-**ver 1.0.1 -- 3jul16**
-
-* Added block slider game named "cslid".
-* Greater care taken to ignore key escape codes.
-
-
-**ver 1.0.0 -- 28jun16**
-
-* original release.
-
+## Some Earlier Revision History:
+
+**ver 2.0.2 -- 17jun20**
+* Enhanced keystroke robustness;
+* Enhanced/simplified puzzle coloring [cslid];
+
+**ver 2.0.1 -- 10jun20**
+* Fixed blank screen problems due to coding error.
+
+**ver 2.0.0 -- 15may20**
+* Added Sound!
+* Added Frogger!
+* Made sure EXEs run from their own directory, as well as the base directory.
+* Replaces/superceeds: MiniPacman, TermFrogger, & TerminalApps.
 
 
 
