@@ -153,8 +153,9 @@ The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys q
 Includes executables and source code.  Note that this game does NOT require an ncurses library in your environment.
 
 cpac can be given 2 optional command line parameters:
-	*) game speed 0..9; 0=slow, 5=default=medium, 9=fast;
-	*) ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast;
+	.) game speed 0..9; 0=slow, 5=default=medium, 9=fast;
+	.) ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast;
+If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin/osx" or "cd bin\win", first.
 
 Before running cpac, it is recommended to resize your terminal to 60 chars. wide by 40 lines tall; then, perhaps, enlarge the font.
 
