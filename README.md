@@ -18,6 +18,14 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.0.4/co22sep20.7z
 
 ## What's new:
 
+
+**ver 2.1.0 -- 26oct20**
+* Elliminated SFML-audio entirely.
+* Greatly simplified sound code and build process.
+* Streamlined libraries, scripts & DLLs.
+* Improved UI for RPN-calc.
+
+
 **ver 2.0.4 -- 22sep20**
 * Game-launcher now allows (return)-key to select, uses improved colors.
 
