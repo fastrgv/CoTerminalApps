@@ -14,23 +14,17 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.1.0/co26oct20.7z
 
 
 
-# CoTerminalApps
 
-## What's new:
+# CoTerminalApps with OpenAL Sound
 
-
-**ver 2.1.0 -- 26oct20**
-* Elliminated SFML-audio entirely.
-* Greatly simplified sound code and build process.
-* Streamlined libraries, scripts & DLLs.
-* Improved UI for RPN-calc.
+## What is new:
 
 
-**ver 2.0.4 -- 22sep20**
-* Game-launcher now allows (return)-key to select, uses improved colors.
-
-**ver 2.0.3 -- 23jun20**
-* All apps are now launched using a single command.
+**ver 2.2.0 -- 8nov20**
+* Completely revised & enhanced sound system; 
+* Using cross-platform OpenAL binding;
+* Simplified build process & coding;
+* Pacman background music now restored.
 
 
 ===============================================================
@@ -128,11 +122,11 @@ the key mapping follows:
 ### CoTerminal-sokoban (csok.adb)
 Move the pusher >< with the arrow keys in order to push all the boxes [] onto the goals :: in which case they look like {}.  Various other functions available on the help screen.  Includes a very large family of puzzle files.
 
-Two [external] sokoban solvers named iplr3r & ibox3r have been added.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name.
+Two [external] sokoban solvers named iplr3r & ibox3r are available.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name.
 
-The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.  Compile it with the command "cmp.sh iplr3r" or "cmp.sh ibox3r".
+The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.
 
-There are many cases these solvers cannot handle, but they are pretty good at sovling smaller puzzles, particularly the more dense ones.
+There are many cases these solvers cannot handle, but they are pretty good at solving smaller puzzles, particularly the more dense ones.
 
 Two time-limited solvers are embedded into csok.  At any time you may press the (=)-key to see if the solver #1 can help you.  If so, you will be prompted to keep pressing that same key to proceed toward a solution.  No prompt means either the present state is unsolvable, or merely that the embedded algorithm failed.  Similarly, the (.)-key initiates solver #2.
 
@@ -150,7 +144,7 @@ A cult classic.  Recalls the HP rpn functionality. This version uses differentia
 ### Pacman (cpac)
 Pacman, is a kid friendly ascii character version of Pacman that plays in a commandline terminal.  Pure minimalism with classic sounds and 9 predefined levels.  
 
-Now with runtime-priority control to prevent terminal freezes, plus commandline control of gamespeed & ghostspeed.
+Now with runtime-priority control to prevent terminal freezes on Windows, plus commandline control of gamespeed & ghostspeed.
 
 Runs on Windows, OSX & Linux.
 
@@ -162,7 +156,7 @@ Includes executables and source code.  Note that this game does NOT require an n
 
 cpac can be given 2 optional command line parameters:
 	.) game speed 0..9; 0=slow, 5=default=medium, 9=fast;
-	.) ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast;
+	.) ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast.
 If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin/osx" or "cd bin\win", first.
 
 Before running cpac, it is recommended to resize your terminal to 60 chars. wide by 40 lines tall; then, perhaps, enlarge the font.
@@ -191,11 +185,11 @@ Before running cfrog, it is recommended to resize your terminal to 56 chars. wid
 ===============================================================
 ## Setup & Running:
 
-
 Mac users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+Open a commandline terminal, and cd to the install directory.
 
 Ensure your keyboard has a short key-delay and fast repeat.
 
@@ -214,6 +208,9 @@ or
 gnuterm.sh
 
 Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
+
+### caveat
+The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to rebuild.
 
 
 ===========================================================================
@@ -239,15 +236,14 @@ Then type "[wlo]buildall" to create new command-line executables for your system
 * runs on Windows, OSX, & Linux;
 * uses only free open source software [F.O.S.S] tools & libraries;
 * portable, transparent code, easy to modify, rebuild;
-* uses SFML-Audio for sounds on OSX & Windows;
-* uses an alternate sound system for linux that is portable across distros.
+* uses a cross-platform implementation of OpenAL-Audio for sounds;
 * pure minimalism:  no graphics, just colored ASCII characters, keyboard, & sound;
 
 
 
 
 ===============================================================
-## Legal Mumbo Jumbo:
+## License:
 
 CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
 
@@ -291,19 +287,14 @@ https://youtu.be/dD3VGbXv3ng
 --------------------------------------------------
 ## Some Earlier Revision History:
 
-**ver 2.0.2 -- 17jun20**
-* Enhanced keystroke robustness;
-* Enhanced/simplified puzzle coloring [cslid];
-
-**ver 2.0.1 -- 10jun20**
-* Fixed blank screen problems due to coding error.
-
-**ver 2.0.0 -- 15may20**
-* Added Sound!
-* Added Frogger!
-* Made sure EXEs run from their own directory, as well as the base directory.
-* Replaces/superceeds: MiniPacman, TermFrogger, & TerminalApps.
+**ver 2.1.0 -- 26oct20**
+* Improved UI for RPN-calc.
 
 
+**ver 2.0.4 -- 22sep20**
+* Game-launcher now allows (return)-key to select, uses improved colors.
+
+**ver 2.0.3 -- 23jun20**
+* All apps are now launched using a single command.
 
 
