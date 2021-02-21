@@ -15,10 +15,17 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.0/co8nov.7z
 
 
 
+
 # CoTerminalApps with OpenAL Sound
 
 ## What is new:
 
+
+
+**ver 2.2.1 -- 21feb21**
+* Updated sokoban autosolvers & csok.
+* Added more capable hbox4 sokoban solver.
+* Improved build scripts.
 
 **ver 2.2.0 -- 8nov20**
 * Completely revised & enhanced sound system; 
@@ -30,11 +37,11 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.0/co8nov.7z
 ===============================================================
 ## Introduction
 
-CoTerminalApps is a collection of non-graphical, colored-ascii-character puzzles & games that run in a commandline terminal on msWindows, OS-X and Gnu/Linux. Now with sound but still extremely portable.
+CoTerminalApps is a portable collection of non-graphical, colored-ascii-character puzzles & games that run in a commandline terminal on Windows, OS-X and Gnu/Linux. Now with sound.
 
 Has runtime-priority control of console terminal, if needed.
 
-Rebuildable using the free GNAT GPL Ada compiler.  
+Rebuildable using the free AdaCore GNAT Ada compiler.  
 
 Includes rpn(calculator), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama);
 
@@ -122,13 +129,11 @@ the key mapping follows:
 ### CoTerminal-sokoban (csok.adb)
 Move the pusher >< with the arrow keys in order to push all the boxes [] onto the goals :: in which case they look like {}.  Various other functions available on the help screen.  Includes a very large family of puzzle files.
 
-Two [external] sokoban solvers named iplr3r & ibox3r are available.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name.
+Three [external] sokoban solvers named iplr3r, ibox3r & hbox4 are available.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name. The solvers print solution-strings to the terminal screen.
 
-The output file (named similarly to the input file) contains directions from the set {u,d,l,r,U,D,L,R}, where upper case indicates a push.  It is size-limited to 17 or fewer boxes, and 128 or fewer interior puzzle positions.
+There are many cases the first two solvers cannot handle, but they are pretty good at solving smaller puzzles, particularly the more dense ones. Hbox4 is the most capable.
 
-There are many cases these solvers cannot handle, but they are pretty good at solving smaller puzzles, particularly the more dense ones.
-
-Two time-limited solvers are embedded into csok.  At any time you may press the (=)-key to see if the solver #1 can help you.  If so, you will be prompted to keep pressing that same key to proceed toward a solution.  No prompt means either the present state is unsolvable, or merely that the embedded algorithm failed.  Similarly, the (.)-key initiates solver #2.
+Two time-limited solvers are embedded into csok.  At any time you may press the (=)-key to see if the solver #1 can help you.  If so, you will be prompted to keep pressing that same key to proceed toward a solution.  No prompt means either the present state is unsolvable, or merely that the embedded algorithm failed.  Similarly, the (.)-key initiates solver #2. These can give you a headstart toward a correct solution by limited use of this feature.  Once you think you can solve it yourself, stop using the solver and proceed manually.  This really helps when you cannot see what your next move should be.
 
 Finally, an optional single command-line argument (decimal float) specifies a timeout interval to wait for the internal autosolver before giving up.  The default is 10.0 seconds.
 
@@ -209,13 +214,15 @@ gnuterm.sh
 
 Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
 
-### caveat
-The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to rebuild.
+### linux caveat
+The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you would need to rebuild.
 
+### OSX caveat
+The prebuilt OSX executables require version 10.13 (sep2017) or newer.
 
 ===========================================================================
 ## Compiler Scripts
-There are three scripts, wbuildall.bat for msWindows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  Now with so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place.
+There are three scripts, wbuildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  Now with so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place.
 
 
 ===============================================================
@@ -233,7 +240,7 @@ Then type "[wlo]buildall" to create new command-line executables for your system
 
 ## What is special about this project?...freedom...
 * uses the Ada programming language & GNAT GPL;
-* runs on Windows, OSX, & Linux;
+* runs on Macs running OSX, or PCs running Windows or Linux;
 * uses only free open source software [F.O.S.S] tools & libraries;
 * portable, transparent code, easy to modify, rebuild;
 * uses a cross-platform implementation of OpenAL-Audio for sounds;
@@ -247,7 +254,7 @@ Then type "[wlo]buildall" to create new command-line executables for your system
 
 CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
 
- Copyright (C) 2020  <fastrgv@gmail.com>
+ Copyright (C) 2021  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -296,5 +303,6 @@ https://youtu.be/dD3VGbXv3ng
 
 **ver 2.0.3 -- 23jun20**
 * All apps are now launched using a single command.
+
 
 
