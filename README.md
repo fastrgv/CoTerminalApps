@@ -7,7 +7,7 @@ Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.1/co21feb21.7z
+https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.2/co6mar21.7z
 
 
 
@@ -20,6 +20,10 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.1/co21feb21.7z
 
 ## What is new:
 
+
+**ver 2.2.2 -- 06mar21**
+* Csok now has alternate character set toggled with (c)-key.
+* Csok now has 3 embedded autosolvers.
 
 
 **ver 2.2.1 -- 21feb21**
