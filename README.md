@@ -20,6 +20,9 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.2/co6mar21.7z
 
 ## What is new:
 
+**ver 2.2.3 -- 10mar21**
+* c7,c9,caz now have solvers & improved screens.
+
 
 **ver 2.2.2 -- 06mar21**
 * Csok now has alternate character set toggled with (c)-key.
