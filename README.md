@@ -22,6 +22,8 @@ https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.3/co10mar21.7z
 
 **ver 2.2.3 -- 10mar21**
 * c7,c9,caz now have solvers & improved screens.
+* c7,caz now allow restart using (r)-key.
+* nexus/puzzles.txt now limited to 60 columns.
 
 
 **ver 2.2.2 -- 06mar21**
