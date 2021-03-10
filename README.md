@@ -7,7 +7,7 @@ Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.3/co9mar21.7z
+https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.3/co10mar21.7z
 
 
 
@@ -54,7 +54,6 @@ Includes rpn(calculator), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that 
 
 See a visual of the 10 puzzles in the image "./puzzles.png".
 
-Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting.  
 
 Usable keys for all:
 
@@ -71,6 +70,12 @@ On Mac/OSX type "macterm.sh"
 On Linux type "gnuterm.sh"
 
 Then use the keyboard arrow keys to highlight the desired game, and hit (enter)-key.
+
+
+### For Maximal Enjoyment...
+Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting. 
+
+Screen setup is important, too. It is recommended to resize your terminal window to 60 chars. wide by XX lines tall; then enlarge the font until the window just barely fits your computer screen. For Pacman: XX=40, all others: XX=25 is sufficient.
 
 
 ===========================================================================
