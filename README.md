@@ -62,6 +62,12 @@ Usable keys for all:
 * arrow-keys or WASD or IJKL for movement;
 * (q)=quit
 * (?)=help toggle
+* 
+All puzzles & games can be called directly from the command line; e.g.
+
+* bin\win\cpac.exe
+
+but it is more convenient to use the 3 selector apps.
 
 All puzzles & games can now be launched from the selector app thusly:
 
