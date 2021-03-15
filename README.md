@@ -213,7 +213,8 @@ Before running cfrog, it is recommended to resize your terminal to 56 chars. wid
 Mac users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
 Open a commandline terminal, and cd to the install directory.
 
 Ensure your keyboard has a short key-delay and fast repeat.
