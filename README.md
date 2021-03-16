@@ -9,7 +9,7 @@ Grab the large file under "release...latest" for all source and data, or try thi
 
 https://github.com/fastrgv/CoTerminalApps/releases/download/v2.2.3/co10mar21.7z
 
-then type "7z x filename" to extract the archive.
+then type "7z x filename.7z" to extract the archive.
 
 
 
