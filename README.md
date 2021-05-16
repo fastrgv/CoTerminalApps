@@ -23,22 +23,30 @@ then type "7z x filename.7z" to extract the archive.
 
 
 
+
 # CoTerminalApps with OpenAL Sound
 
+
 ## What is new:
+
+
+**ver 2.2.4 -- 16may21**
+* csok: added more puzzle files.
+* csok: fixed u-key [undo] problem.
+* csok: added o-key to restart puzzle.
+* added c9r, reverse-mode c9.
+* improved help messages.
 
 **ver 2.2.3 -- 10mar21**
 * c7,c9,caz now have solvers & improved screens.
 * c7,caz now allow restart using (r)-key.
 * nexus/puzzles.txt now limited to 60 columns.
 
-
 **ver 2.2.2 -- 06mar21**
 * Csok now has alternate character set toggled with (c)-key.
 * Csok now has 3 embedded autosolvers.
 
-
-**ver 2.2.1 -- 21feb21**
+**ver 2.2.1 -- 23feb21**
 * Updated sokoban autosolvers & csok.
 * Added more capable hbox4 sokoban solver.
 * Improved build scripts.
@@ -50,12 +58,12 @@ then type "7z x filename.7z" to extract the archive.
 * Pacman background music now restored.
 
 
-
-
 ===============================================================
 ## Introduction
 
 CoTerminalApps is a portable collection of non-graphical, colored-ascii-character puzzles & games that run in a commandline terminal on Windows, OS-X and Gnu/Linux. Now with sound.
+
+The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
 Has runtime-priority control of console terminal, if needed.
 
@@ -65,35 +73,31 @@ Includes rpn(calculator), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that 
 
 See a visual of the 10 puzzles in the image "./puzzles.png".
 
-
 Usable keys for all:
 
 * arrow-keys or WASD or IJKL for movement;
 * (q)=quit
 * (?)=help toggle
-* 
+
 All puzzles & games can be called directly from the command line; e.g.
 
 * bin\win\cpac.exe
 
 but it is more convenient to use the 3 selector apps.
 
-All puzzles & games can now be launched from the selector app thusly:
+All puzzles & games can now be launched from the selector apps:
 
-On Windows type "winterm.bat"
+* winterm.bat			(Windows)
+* macterm.sh			(Mac/OSX)
+* gnuterm.sh			(linux)
 
-On Mac/OSX type "macterm.sh"
-
-On Linux type "gnuterm.sh"
-
-Then use the keyboard arrow keys to highlight the desired game, and hit (enter)-key.
+Use the keyboard arrow keys to highlight the desired game, then press the (enter)-key.
 
 
 ### For Maximal Enjoyment...
 Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting. 
 
 Screen setup is important, too. It is recommended to resize your terminal window to 60 chars. wide by XX lines tall; then enlarge the font until the window just barely fits your computer screen. For Pacman: XX=40, all others: XX=25 is sufficient.
-
 
 ===========================================================================
 
@@ -156,24 +160,25 @@ the key mapping follows:
 ===============================================================
 
 ### CoTerminal-sokoban (csok.adb)
-Move the pusher >< with the arrow keys in order to push all the boxes [] onto the goals :: in which case they look like {}.  Various other functions available on the help screen.  Includes a very large family of puzzle files.
+There are now two character sets possible that are toggled with the (c)-key.
 
-Three [external] sokoban solvers named iplr3r, ibox3r & hbox4 are available.  The command line is "solver-name puzzle-file-name max-levels level-number".  Note that the max-levels are embedded into each puzzle file name. The solvers print solution-strings to the terminal screen.
+Move the pusher ( >< or @ ) with the arrow keys in order to push all the boxes ( [] or $ ) onto the goals ( :: or . ) in which case they look like ( {} or asterisk ).  Various other functions available on the help screen.  Includes a very large family of puzzle files.
+
+Three [external] sokoban solvers named iplr3r, ibox3r, & hbox4  are available.  The command line is "solver-name puzzle-file-name level-number-to-solve".  The solvers print solution-strings to the terminal screen.
 
 There are many cases the first two solvers cannot handle, but they are pretty good at solving smaller puzzles, particularly the more dense ones. Hbox4 is the most capable.
 
-Two time-limited solvers are embedded into csok.  At any time you may press the (=)-key to see if the solver #1 can help you.  If so, you will be prompted to keep pressing that same key to proceed toward a solution.  No prompt means either the present state is unsolvable, or merely that the embedded algorithm failed.  Similarly, the (.)-key initiates solver #2. These can give you a headstart toward a correct solution by limited use of this feature.  Once you think you can solve it yourself, stop using the solver and proceed manually.  This really helps when you cannot see what your next move should be.
+Three time-limited-to-10-second solvers are embedded into csok.  At any time you may press the (=)-key to see if the solver #1 can help you.  If so, you will be prompted to keep pressing that same key to proceed toward a solution.  No prompt means either the present state is unsolvable, or merely that the embedded algorithm failed.  Similarly, the (.)-key initiates solver #2; and the (,)-key initiates solver #3. These can give you a headstart toward a correct solution by limited use of this feature.  Once you think you can solve it yourself, stop using the solver and proceed manually.  This really helps when you cannot see what your next move should be.
 
-Finally, an optional single command-line argument (decimal float) specifies a timeout interval to wait for the internal autosolver before giving up.  The default is 10.0 seconds.
 
 ### CoTerminal-HoleInOne (chio.adb, chio4.adb)
 Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 
 ### CoTerminal-Nine (c9.adb)
-Reverse the order of the numbered blocks.
+Reverse the order of the numbered blocks with assorted shapes. First version begins with blocks in order. Second begins with blocks in reverse order. Has solver.
 
 ### RPN (reverse polish notation) command line calculator
-A cult classic.  Recalls the HP rpn functionality. This version uses differentials to calculate an error estimate.
+A cult classic.  Recalls the HP rpn functionality. As a bonus, this version uses differentials to calculate an error estimate.
 
 ### Pacman (cpac)
 Pacman, is a kid friendly ascii character version of Pacman that plays in a commandline terminal.  Pure minimalism with classic sounds and 9 predefined levels.  
@@ -222,7 +227,8 @@ Before running cfrog, it is recommended to resize your terminal to 56 chars. wid
 Mac users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
 Open a commandline terminal, and cd to the install directory.
 
@@ -245,7 +251,12 @@ gnuterm.sh
 Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
 
 ### linux caveat
-The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you would need to rebuild.
+The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you would need to rebuild. 
+
+One alternative is that the individual Windows EXEs will run on linux using wine, but they only work properly if you resize the window to be a proper size. Each game needs a different size. E.G. the following can work nicely in a window with 17 lines [and about 40 columns]:
+
+	* cd bin/win/
+	* wine csok.exe
 
 ### OSX caveat
 The prebuilt OSX executables require version 10.13 (sep2017) or newer.
@@ -268,12 +279,12 @@ Then type "[wlo]buildall" to create new command-line executables for your system
 
 ===============================================================
 
-## What is special about this project?...freedom...
-* uses the Ada programming language & GNAT GPL;
+## What is special about this project?...freedom...portability:
+* uses the [freely-available] Ada programming language & GNAT GPL;
 * runs on Macs running OSX, or PCs running Windows or Linux;
 * uses only free open source software [F.O.S.S] tools & libraries;
 * portable, transparent code, easy to modify, rebuild;
-* uses a cross-platform implementation of OpenAL-Audio for sounds;
+* uses a cross-platform implementation of OpenAL-Audio, adaptable by any Ada application that needs sounds & music-loops with a simple interface.
 * pure minimalism:  no graphics, just colored ASCII characters, keyboard, & sound;
 
 
@@ -333,6 +344,7 @@ https://youtu.be/dD3VGbXv3ng
 
 **ver 2.0.3 -- 23jun20**
 * All apps are now launched using a single command.
+
 
 
 
