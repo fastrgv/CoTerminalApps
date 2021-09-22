@@ -26,11 +26,15 @@ then type "7z x filename.7z" to extract the archive.
 
 
 
+
 # CoTerminalApps with OpenAL Sound
 
 
 ## What is new:
 
+**ver 2.3.0 -- 22sep21**
+* Added SpaceInvaders arcade game [cinv].
+* Fixed critically bad indexing in "nexus" selection app.
 
 **ver 2.2.4 -- 16may21**
 * csok: added more puzzle files.
@@ -38,27 +42,6 @@ then type "7z x filename.7z" to extract the archive.
 * csok: added o-key to restart puzzle.
 * added c9r, reverse-mode c9.
 * improved help messages.
-
-**ver 2.2.3 -- 10mar21**
-* c7,c9,caz now have solvers & improved screens.
-* c7,caz now allow restart using (r)-key.
-* nexus/puzzles.txt now limited to 60 columns.
-
-**ver 2.2.2 -- 06mar21**
-* Csok now has alternate character set toggled with (c)-key.
-* Csok now has 3 embedded autosolvers.
-
-**ver 2.2.1 -- 23feb21**
-* Updated sokoban autosolvers & csok.
-* Added more capable hbox4 sokoban solver.
-* Improved build scripts.
-
-**ver 2.2.0 -- 8nov20**
-* Completely revised & enhanced sound system; 
-* Using cross-platform OpenAL binding;
-* Simplified build process & coding;
-* Pacman background music now restored.
-
 
 ===============================================================
 ## Introduction
@@ -71,7 +54,7 @@ Has runtime-priority control of console terminal, if needed.
 
 Rebuildable using the free AdaCore GNAT Ada compiler.  
 
-Includes rpn(calculator), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama);
+Includes rpn(calculator), cinv(nInvaders), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama);
 
 See a visual of the 10 puzzles in the image "./puzzles.png".
 
@@ -102,6 +85,59 @@ Keyboard setup is important.  You should have a short key-delay and fast repeat 
 Screen setup is important, too. It is recommended to resize your terminal window to 60 chars. wide by XX lines tall; then enlarge the font until the window just barely fits your computer screen. For Pacman: XX=40, all others: XX=25 is sufficient.
 
 ===========================================================================
+
+### CoTerminal-Space-Invaders (cinv.adb)
+This is my translation of nInvaders.c into Ada that has SOUND !!!
+[thanks to dettus@matrixx-bielefeld.de, copied from http://ninvaders.sourceforge.net/]
+You need only the (space)-key to fire your laser gun and the left/right arrow keys
+to move out of the way of the alien missiles. Needs an 80-chars x 30-lines window.
+There are no command-line options, but difficulty increases with level.
+
+Note this app is under active development & improvement.  So be sure to check back for the latest update. Actually, it is an "early" release in a primitive state, yet it is playable and fun.
+
+
+### Pacman (cpac)
+Pacman, is a kid friendly ascii character version of Pacman that plays in a commandline terminal.  Pure minimalism with classic sounds and 9 predefined levels.  
+
+Now with runtime-priority control to prevent terminal freezes on Windows, plus commandline control of gamespeed & ghostspeed.
+
+Runs on Windows, OSX & Linux.
+
+Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
+
+The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.
+
+Includes executables and source code.  Note that this game does NOT require an ncurses library in your environment.
+
+cpac can be given 2 optional command line parameters:
+	.) game speed 0..9; 0=slow, 5=default=medium, 9=fast;
+	.) ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast.
+If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin/osx" or "cd bin\win", first.
+
+Before running cpac, it is recommended to resize your terminal to 60 chars. wide by 40 lines tall; then, perhaps, enlarge the font.
+
+
+
+### Frogger (cfrog)
+Terminal frogger is a kid friendly ascii character version of Frogger that plays in a commandline terminal.  Pure minimalism with classic sounds and three levels.
+
+@@@@ is a raft of lillypads, 
+QQQQ is a team of turtles, 
+==== is a log, 
+TTT is a truck, 
+ccc is a car.
+
+Runs on Windows, OSX & Linux.
+
+Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
+
+The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit.
+
+Before running cfrog, it is recommended to resize your terminal to 56 chars. wide by 21 lines tall; then, perhaps, enlarge the font.
+
+
+
+
 
 
 ### CoTerminal-Rush (crush.adb)
@@ -181,47 +217,6 @@ Reverse the order of the numbered blocks with assorted shapes. First version beg
 
 ### RPN (reverse polish notation) command line calculator
 A cult classic.  Recalls the HP rpn functionality. As a bonus, this version uses differentials to calculate an error estimate.
-
-### Pacman (cpac)
-Pacman, is a kid friendly ascii character version of Pacman that plays in a commandline terminal.  Pure minimalism with classic sounds and 9 predefined levels.  
-
-Now with runtime-priority control to prevent terminal freezes on Windows, plus commandline control of gamespeed & ghostspeed.
-
-Runs on Windows, OSX & Linux.
-
-Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
-
-The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit;  (p) pauses game.
-
-Includes executables and source code.  Note that this game does NOT require an ncurses library in your environment.
-
-cpac can be given 2 optional command line parameters:
-	.) game speed 0..9; 0=slow, 5=default=medium, 9=fast;
-	.) ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast.
-If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin/osx" or "cd bin\win", first.
-
-Before running cpac, it is recommended to resize your terminal to 60 chars. wide by 40 lines tall; then, perhaps, enlarge the font.
-
-
-
-### Frogger (cfrog)
-Terminal frogger is a kid friendly ascii character version of Frogger that plays in a commandline terminal.  Pure minimalism with classic sounds and three levels.
-
-@@@@ is a raft of lillypads, 
-QQQQ is a team of turtles, 
-==== is a log, 
-TTT is a truck, 
-ccc is a car.
-
-Runs on Windows, OSX & Linux.
-
-Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
-
-The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit.
-
-Before running cfrog, it is recommended to resize your terminal to 56 chars. wide by 21 lines tall; then, perhaps, enlarge the font.
-
-
 
 ===============================================================
 ## Setup & Running:
@@ -337,6 +332,27 @@ https://youtu.be/dD3VGbXv3ng
 --------------------------------------------------
 ## Some Earlier Revision History:
 
+**ver 2.2.3 -- 10mar21**
+* c7,c9,caz now have solvers & improved screens.
+* c7,caz now allow restart using (r)-key.
+* nexus/puzzles.txt now limited to 60 columns.
+
+**ver 2.2.2 -- 06mar21**
+* Csok now has alternate character set toggled with (c)-key.
+* Csok now has 3 embedded autosolvers.
+
+**ver 2.2.1 -- 23feb21**
+* Updated sokoban autosolvers & csok.
+* Added more capable hbox4 sokoban solver.
+* Improved build scripts.
+
+**ver 2.2.0 -- 8nov20**
+* Completely revised & enhanced sound system; 
+* Using cross-platform OpenAL binding;
+* Simplified build process & coding;
+* Pacman background music now restored.
+
+
 **ver 2.1.0 -- 26oct20**
 * Improved UI for RPN-calc.
 
@@ -346,6 +362,7 @@ https://youtu.be/dD3VGbXv3ng
 
 **ver 2.0.3 -- 23jun20**
 * All apps are now launched using a single command.
+
 
 
 
