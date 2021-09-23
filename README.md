@@ -34,6 +34,13 @@ then type "7z x filename.7z" to extract the archive.
 
 ## What is new:
 
+**ver 2.3.1 -- 24sep21**
+* SpaceInvaders Improvements including:
+	* added sound when player loses life;
+	* added output of number of lives remaining;
+	* made first level easier;
+	* made susequent levels harder by increasing alien speed & number of missiles.
+
 **ver 2.3.0 -- 22sep21**
 * Added SpaceInvaders arcade game [cinv].
 * Fixed critically bad indexing in "nexus" selection app.
