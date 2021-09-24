@@ -12,7 +12,7 @@ Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v2.3.1/co25sep21.7z
+https://github.com/fastrgv/CoTerminalApps/releases/download/v2.3.1/co26sep21.7z
 
 
 then type "7z x filename.7z" to extract the archive.
@@ -39,6 +39,10 @@ then type "7z x filename.7z" to extract the archive.
 	* added output of number of lives remaining;
 	* made first level easier;
 	* made susequent levels harder by increasing alien speed & number of missiles.
+	* refined screen drawing indexes to elliminate anomalies.
+	* added gameover sound.
+	* added checks to assure screen-draws are synched with motions.
+	* added final screen-clear to play nicely with selection app.
 
 **ver 2.3.0 -- 22sep21**
 * Added SpaceInvaders arcade game [cinv].
