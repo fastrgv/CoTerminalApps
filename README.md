@@ -33,6 +33,21 @@ then type "7z x filename.7z" to extract the archive.
 
 ## What is new:
 
+**ver 2.3.3 -- 28sep21**
+* SpaceInvaders:
+	* Improved logic to elliminate color errors;
+	* Added high-valued, bidirectional UFO.
+	* Made first level easier; higher levels harder.
+
+
+**ver 2.3.2 -- 26sep21**
+* SpaceInvaders Improvements:
+	* refined screen drawing indexes to elliminate anomalies.
+	* added gameover sound.
+	* added checks to assure screen-draws are synched with motions.
+	* added final screen-clear to play nicely with selection app.
+
+
 **ver 2.3.1 -- 24sep21**
 * SpaceInvaders Improvements including:
 	* added sound when player loses life;
