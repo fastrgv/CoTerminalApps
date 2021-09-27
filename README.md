@@ -109,7 +109,14 @@ Use the keyboard arrow keys to highlight the desired game, then press the (enter
 ### For Maximal Enjoyment...
 Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting. 
 
-Screen setup is important, too. It is recommended to resize your terminal window to 60 chars. wide by XX lines tall; then enlarge the font until the window just barely fits your computer screen. For Pacman: XX=40, all others: XX=25 is sufficient.
+Screen setup is important, too. Terminal sizes required:
+* pacman:	60x40
+* frogger:	56x21
+* Invaders:	80x30
+* others:	60x25
+
+It is recommended to resize your terminal window; then enlarge the font until the window just barely fits your computer screen.
+
 
 ===========================================================================
 
