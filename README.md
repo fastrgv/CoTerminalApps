@@ -28,60 +28,31 @@ then type "7z x filename.7z" to extract the archive.
 
 
 
+
 # CoTerminalApps with OpenAL Sound
 
 
 ## What is new:
 
-**ver 2.3.3 -- 28sep21**
+
+**ver 2.3.4 -- 29sep21**
 * SpaceInvaders:
-	* Improved logic to elliminate color errors;
-	* Added high-valued, bidirectional UFO.
-	* Made first level easier; higher levels harder.
+	* New UFO sound (less annoying);
+	* More aliens (11 across, like original).
 
-
-**ver 2.3.2 -- 26sep21**
-* SpaceInvaders Improvements:
-	* refined screen drawing indexes to elliminate anomalies.
-	* added gameover sound.
-	* added checks to assure screen-draws are synched with motions.
-	* added final screen-clear to play nicely with selection app.
-
-
-**ver 2.3.1 -- 24sep21**
-* SpaceInvaders Improvements including:
-	* added sound when player loses life;
-	* added output of number of lives remaining;
-	* made first level easier;
-	* made susequent levels harder by increasing alien speed & number of missiles.
-	* refined screen drawing indexes to elliminate anomalies.
-	* added gameover sound.
-	* added checks to assure screen-draws are synched with motions.
-	* added final screen-clear to play nicely with selection app.
-
-**ver 2.3.0 -- 22sep21**
-* Added SpaceInvaders arcade game [cinv].
-* Fixed critically bad indexing in "nexus" selection app.
-
-**ver 2.2.4 -- 16may21**
-* csok: added more puzzle files.
-* csok: fixed u-key [undo] problem.
-* csok: added o-key to restart puzzle.
-* added c9r, reverse-mode c9.
-* improved help messages.
 
 ===============================================================
 ## Introduction
 
-CoTerminalApps is a portable collection of non-graphical, colored-ascii-character puzzles & games that run in a commandline terminal on Windows, OS-X and Gnu/Linux. Now with sound.
+CoTerminalApps is a portable collection of non-graphical, colored-ascii-character puzzles & games with sound that run in a commandline terminal on Windows, OS-X and Gnu/Linux.
 
 The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
-Has runtime-priority control of console terminal, if needed.
+Windows version has runtime-priority control of console terminal.
 
 Rebuildable using the free AdaCore GNAT Ada compiler.  
 
-Includes rpn(calculator), cinv(nInvaders), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama);
+Includes rpn(calculator), cinv(SpaceInvaders), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama);
 
 See a visual of the 10 puzzles in the image "./puzzles.png".
 
@@ -95,7 +66,7 @@ All puzzles & games can be called directly from the command line; e.g.
 
 * bin\win\cpac.exe
 
-but it is more convenient to use the 3 selector apps.
+but it is more convenient to use the selector app.
 
 All puzzles & games can now be launched from the selector apps:
 
@@ -117,17 +88,14 @@ Screen setup is important, too. Terminal sizes required:
 
 It is recommended to resize your terminal window; then enlarge the font until the window just barely fits your computer screen.
 
-
 ===========================================================================
 
 ### CoTerminal-Space-Invaders (cinv.adb)
 This is my translation of nInvaders.c into Ada that has SOUND !!!
-[thanks to dettus@matrixx-bielefeld.de, copied from http://ninvaders.sourceforge.net/]
-You need only the (space)-key to fire your laser gun and the left/right arrow keys
-to move out of the way of the alien missiles. Needs an 80-chars x 30-lines window.
-There are no command-line options, but difficulty increases with level.
 
-Note this app is under active development & improvement.  So be sure to check back for the latest update. Actually, it is an "early" release in a primitive state, yet it is playable and fun.
+You need only the (space)-key to fire your laser gun and the left/right arrow keys to move out of the way of the alien missiles. The terminal window must be at least 80-chars wide x 30-lines. There are no command-line options, but difficulty increases with level.
+
+Note that this app is still under active development & improvement.  So be sure to check back for the latest update. Nevertheless, it is playable and fun.
 
 
 ### Pacman (cpac)
@@ -265,7 +233,7 @@ Open a commandline terminal, and cd to the install directory.
 
 Ensure your keyboard has a short key-delay and fast repeat.
 
-Minimize the size of your terminal window.  Your terminal must be 60 chars wide by 40 lines for pacman, smaller for others.  
+Minimize the size of your terminal window.  Your terminal must be 80 chars wide by 30 lines for SpaceInvaders, 60 by 40 lines for pacman, and smaller for others.  So 80 by 40 should work for all.
 
 Enlarge the Font so that the window fills your monitor.
 
@@ -281,7 +249,7 @@ gnuterm.sh
 
 Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
 
-### linux caveat
+### WINE workaround for linux
 The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you would need to rebuild. 
 
 One alternative is that the individual Windows EXEs will run on linux using wine, but they only work properly if you resize the window to be a proper size. Each game needs a different size. E.G. the following can work nicely in a window with 17 lines [and about 40 columns]:
@@ -301,11 +269,13 @@ There are three scripts, wbuildall.bat for Windows, lbuildall.sh for Linux, and 
 ## Build Instructions:
 Remember that prebuilt executables are already included. But, if you want to rebuild...
 
-Manually install GNAT GPL from libre.adacore.com/download/.  If you don't like my key-mappings, edit the code as you like.
+Manually install GNAT GPL from libre.adacore.com/download/ along with "gnatcoll", its companion library.  If you don't like my key-mappings, edit the code as you like.
 
 Next, edit the scripts wcmp.bat or lcmp.sh or ocmp.sh so that the path to gnatmake is correct.  These scripts streamline the build process by allowing auxilliary files to be neatly hidden in subdirectories.  And make sure it is executable.
 
 Then type "[wlo]buildall" to create new command-line executables for your system. ( w for Windows, l for Linux, o for OSX). Note that on OSX, you must have the Apple-Xcode g++ compiler present in order to rebuild.
+
+There are NO other 3rd party libraries or tools required to build.
 
 
 ===============================================================
@@ -348,9 +318,11 @@ Serhiy Grabarchuk and Peter Grabarchuk for their "Hole in One", "Hole in One plu
 
 Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, after which this Ada version was modelled (gnu gpl).
 
+Sebastian Gutsfeld [segoh@gmx.net]  & Alexander Hollinger [alexander.hollinger@gmx.net] for the C-version of nInvaders (v0.1.1), after which this Ada version was modelled (gnu gpl).
+
 ----------------------------------------------
 ### SoundFiles [x.wav]
-Fanfare/Applause sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt. Others from 
+Fanfare/Applause and UFO sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt. Others from 
 * classicgaming.cc/classics/pac-man/sounds
 * classicgaming.cc/classics/frogger/sounds
 (also CreativeCommons).
@@ -365,6 +337,41 @@ https://youtu.be/dD3VGbXv3ng
 
 --------------------------------------------------
 ## Some Earlier Revision History:
+
+**ver 2.3.3 -- 28sep21**
+* SpaceInvaders:
+	* Improved logic to elliminate color errors;
+	* Added high-valued, bidirectional UFO.
+	* Made first level easier; higher levels harder.
+
+
+**ver 2.3.2 -- 26sep21**
+* SpaceInvaders Improvements:
+	* refined screen drawing indexes to elliminate anomalies.
+	* added gameover sound.
+	* added checks to assure screen-draws are synched with motions.
+	* added final screen-clear to play nicely with selection app.
+
+
+**ver 2.3.1 -- 24sep21**
+* SpaceInvaders Improvements:
+	* refined timing params for improved & reliable action.
+	* added sound when player loses life;
+	* added output of number of lives remaining;
+	* made first level easier;
+	* each susequent level has increasing alien speed & number of missiles.
+
+**ver 2.3.0 -- 22sep21**
+* Added SpaceInvaders arcade game [cinv].
+* Fixed critically bad indexing in "nexus" selection app.
+
+**ver 2.2.4 -- 16may21**
+* csok: added more puzzle files.
+* csok: fixed u-key [undo] problem.
+* csok: added o-key to restart puzzle.
+* added c9r, reverse-mode c9.
+* improved help messages.
+
 
 **ver 2.2.3 -- 10mar21**
 * c7,c9,caz now have solvers & improved screens.
@@ -396,8 +403,6 @@ https://youtu.be/dD3VGbXv3ng
 
 **ver 2.0.3 -- 23jun20**
 * All apps are now launched using a single command.
-
-
 
 
 
