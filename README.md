@@ -93,7 +93,7 @@ It is recommended to resize your terminal window; then enlarge the font until th
 ### CoTerminal-Space-Invaders (cinv.adb)
 This is my translation of nInvaders.c into Ada that has SOUND !!!
 
-You need only the (space)-key to fire your laser gun and the left/right arrow keys to move out of the way of the alien missiles. The terminal window must be at least 80-chars wide x 30-lines. There are no command-line options, but difficulty increases with level.
+You need only the (space)-key to fire your laser gun and the left/right arrow keys [or a-key/d-key] to move out of the way of the alien missiles. The terminal window must be at least 80-chars wide x 30-lines. There are no command-line options, but difficulty increases with level.
 
 Note that this app is still under active development & improvement.  So be sure to check back for the latest update. Nevertheless, it is playable and fun.
 
