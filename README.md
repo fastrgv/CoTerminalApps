@@ -76,7 +76,7 @@ All puzzles & games can now be launched from the selector apps:
 
 Use the keyboard arrow keys to highlight the desired game, then press the (enter)-key.
 
-Windows users note: I suggest that you DO NOT try using the linux executables under WSL. Simply use the windows version [winterm.bat] because special measures (priority-controls) are necessary on Windows to achieve arcade-level response.
+Windows users note: I suggest that you DO NOT try using the linux executables under WSL [Windows Subsystem for Linux]. Simply use the windows versions [initiated by winterm.bat] because special measures (priority-controls) have been taken on Windows to achieve arcade-level response.
 
 ### For Maximal Enjoyment...
 Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting. 
