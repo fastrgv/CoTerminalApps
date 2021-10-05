@@ -34,6 +34,9 @@ then type "7z x filename.7z" to extract the archive.
 
 ## What is new:
 
+**ver 2.3.5 -- 06oct21**
+* SpaceInvaders:
+	* New UFO shape; new alien shapes; aliens harder to hit.
 
 **ver 2.3.4 -- 29sep21**
 * SpaceInvaders:
