@@ -1,4 +1,4 @@
-Tar file extraction on Windows:
+File extraction on Windows:
 
 If you have a previous installation of the game on your computer, 
 then delete it by typing something like:
@@ -11,26 +11,23 @@ This will save space on your computer's disk drive, and will
 help to avoid confusion.
 
 
-Next, move the newest archive, a zip/gz/7z file 
+Next, move the newest archive, a 7z file 
 [from your Downloads directory] to any directory of your choosing:
 move <file-name>.extension <game-installation-directory>
 cd <game-installation-directory>
 
-Next, extract the tarball:
+Next, unzip:
 
 A) If you have it, PeaZip seems to work fine for all archive types.
 
 B) If you do not already have an unzip utility, I recommend 
 downloading 7z [from www.7-zip.org].  It's free, and works nicely:
-1a) 7z x <file-name>.tar.gz [this unzips gz to a tar file]
-1b) 7z x <file-name>.7z [this unzips 7z to a tar file]
-2) 7z x <file-name>.tar    
-	[this creates a new directory, preserving internal structure]
-3) cd <game-dir>
+1) 7z x <file-name>.7z [this unzips contents to a new game-dir]
+2) cd <game-dir>
 
+Note that WSL [Windows Subsystem for Linux] is not supported.
+Simply use the Windows executable provided.
 
-Attention:
-if there are error messages [about failure to create links], 
-they can be IGNORED.  These linked files are used only 
+Note also that any error messages you might see about failure to 
+create links can be IGNORED.  These linked files are used only 
 on linux or Mac OSX systems.
-
