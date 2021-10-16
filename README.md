@@ -253,13 +253,8 @@ gnuterm.sh
 
 Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
 
-### WINE workaround for linux
 The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you would need to rebuild. 
 
-One alternative is that the individual Windows EXEs will run on linux using wine, but they only work properly if you resize the window to be a proper size. Each game needs a different size. E.G. the following can work nicely in a window with 17 lines [and about 40 columns]:
-
-	* cd bin/win/
-	* wine csok.exe
 
 ### OSX caveat
 The prebuilt OSX executables require version 10.13 (sep2017) or newer.
