@@ -3,7 +3,7 @@ File extraction on Windows:
 If you have a previous installation of the game on your computer, 
 then delete it by typing something like:
 
-	RMDIR/S <game-installation-directory>\<game-dir>
+	RMDIR/S <game-directory>
 
 from a command line terminal.
 
@@ -12,9 +12,8 @@ help to avoid confusion.
 
 
 Next, move the newest archive, a 7z file 
-[from your Downloads directory] to any directory of your choosing:
-move <file-name>.extension <game-installation-directory>
-cd <game-installation-directory>
+[from your Downloads directory] to any directory of your choosing;
+Then "cd" to that directory.
 
 Next, unzip:
 
