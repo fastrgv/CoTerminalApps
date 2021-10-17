@@ -27,12 +27,20 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 
 
-
-
 # CoTerminalApps with OpenAL Sound
 
 
 ## What is new:
+
+
+**ver 2.3.7 -- 18oct21**
+* Elliminated anomalous clutter in nexus selection app;
+* Arcade-games now pause to show stats before returning to nexus.
+
+**ver 2.3.6 -- 07oct21**
+* SpaceInvaders:
+	* New red aliens shape.
+
 
 **ver 2.3.5 -- 06oct21**
 * SpaceInvaders:
@@ -79,7 +87,10 @@ All puzzles & games can now be launched from the selector apps:
 
 Use the keyboard arrow keys to highlight the desired game, then press the (enter)-key.
 
-Windows users note: I do not support using the linux executables under WSL [Windows Subsystem for Linux]. Simply use the windows versions [initiated by winterm.bat] because extraordinary measures have been taken in all the Windows executables to achieve arcade-level response.
+Windows users note: Using linux executables under WSL [Windows Subsystem for Linux] is not supported. Instead, you should use the windows versions [initiated by winterm.bat] because extraordinary measures have been taken to achieve arcade-level response under Windows.
+
+Similarly, linux users cannot use wine to run the Windows executables.
+
 
 ### For Maximal Enjoyment...
 Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting. 
@@ -233,7 +244,7 @@ Windows users see "windows-setup.txt".
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
-Open a commandline terminal, and cd to the install directory.
+Open a commandline terminal, and cd to the game directory.
 
 Ensure your keyboard has a short key-delay and fast repeat.
 
@@ -253,8 +264,9 @@ gnuterm.sh
 
 Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
 
-The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you would need to rebuild. 
+The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you would need to rebuild (see below).
 
+[deleted wine comments]
 
 ### OSX caveat
 The prebuilt OSX executables require version 10.13 (sep2017) or newer.
@@ -266,7 +278,7 @@ There are three scripts, wbuildall.bat for Windows, lbuildall.sh for Linux, and 
 
 ===============================================================
 ## Build Instructions:
-Remember that prebuilt executables are already included. But, if you want to rebuild...
+Remember that prebuilt executables are already included. But, if you want or need to rebuild...
 
 Manually install GNAT GPL from libre.adacore.com/download/ along with "gnatcoll", its companion library.  If you don't like my key-mappings, edit the code as you like.
 
@@ -330,6 +342,8 @@ Fanfare/Applause and UFO sounds are from freesound.org and are covered by the Cr
 ----------------------------------------------
 ## Best Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
+or
+https://sourceforge.net/u/fastrgv/profile/
 
 ## Video BlockSlider Autosolve:
 https://youtu.be/dD3VGbXv3ng
@@ -339,14 +353,14 @@ https://youtu.be/dD3VGbXv3ng
 
 **ver 2.3.3 -- 28sep21**
 * SpaceInvaders:
-	* Improved logic to elliminate color errors;
+	* Improved logic to eliminate color errors;
 	* Added high-valued, bidirectional UFO.
 	* Made first level easier; higher levels harder.
 
 
 **ver 2.3.2 -- 26sep21**
 * SpaceInvaders Improvements:
-	* refined screen drawing indexes to elliminate anomalies.
+	* refined screen drawing indexes to eliminate anomalies.
 	* added gameover sound.
 	* added checks to assure screen-draws are synched with motions.
 	* added final screen-clear to play nicely with selection app.
@@ -402,6 +416,8 @@ https://youtu.be/dD3VGbXv3ng
 
 **ver 2.0.3 -- 23jun20**
 * All apps are now launched using a single command.
+
+
 
 
 
