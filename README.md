@@ -12,7 +12,7 @@ Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-https://github.com/fastrgv/CoTerminalApps/releases/download/v2.3.7/co18oct21.7z
+https://github.com/fastrgv/CoTerminalApps/releases/download/v2.3.7/co21oct21.7z
 
 
 then type "7z x filename.7z" to extract the archive.
@@ -84,7 +84,8 @@ but it is more convenient to use the selector app.
 
 All puzzles & games can now be launched from the selector apps:
 
-* winterm.bat			(Windows)
+* winterm.bat			(Win64)
+* w32term.bat			(Win32)
 * macterm.sh			(Mac/OSX)
 * gnuterm.sh			(linux)
 
@@ -257,7 +258,9 @@ Enlarge the Font so that the window fills your monitor.
 
 To launch the game selector App, depending on your system, type:
 
-winterm.bat
+winterm.bat (win64)
+or
+w32term.bat (win32)
 
 or
 macterm.sh
@@ -276,7 +279,7 @@ The prebuilt OSX executables require version 10.13 (sep2017) or newer.
 
 ===========================================================================
 ## Compiler Scripts
-There are three scripts, wbuildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  Now with so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place.
+There are four scripts, w[32]buildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  Now with so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place.
 
 
 ===============================================================
