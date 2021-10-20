@@ -34,6 +34,9 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 
 **ver 2.3.7 -- 18oct21**
+
+* Besides Win64, I now provide a Win32 build, to support older platforms.
+
 * Elliminated anomalous clutter in nexus selection app;
 * Arcade-games now pause to show stats before returning to nexus.
 
