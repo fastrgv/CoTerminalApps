@@ -32,7 +32,11 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 ## What is new:
 
-
+**ver 2.3.9 -- 05nov21**
+* Added example script to build using Gnu/Gnat.
+* Refined libraries and build scripts.
+* Replaced libgnatcoll.a with one downloaded from GitHub.
+* 
 **ver 2.3.7 -- 18oct21**
 
 * Besides Win64, I now provide a Win32 build, to support older platforms.
