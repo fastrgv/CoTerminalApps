@@ -343,7 +343,7 @@ Sebastian Gutsfeld [segoh@gmx.net]  & Alexander Hollinger [alexander.hollinger@g
 
 ----------------------------------------------
 ### SoundFiles [x.wav]
-Fanfare/Applause and UFO sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt. Others from 
+Fanfare/Applause and UFO sounds are from freesound.org and are covered by the Creative Commons CC0 license. Others from 
 * classicgaming.cc/classics/pac-man/sounds
 * classicgaming.cc/classics/frogger/sounds
 (also CreativeCommons).
