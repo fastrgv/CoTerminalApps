@@ -32,6 +32,11 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 ## What is new:
 
+**ver 2.4.0 -- 23dec21**
+
+* Updated gnatcoll libraries on OSX & w32; removed unused libgpr.a.
+* All "assets", including datafiles & soundfiles, now have licenses compatible with the GPLv3 license.
+
 **ver 2.3.9 -- 05nov21**
 * Added example script to build using Gnu/Gnat.
 * Refined libraries and build scripts.
