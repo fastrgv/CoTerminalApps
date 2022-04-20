@@ -316,7 +316,10 @@ There are NO other 3rd party libraries or tools required to build.
 * pure minimalism:  no graphics, just colored ASCII characters, keyboard, & sound;
 
 
-If you make improvements, please send then to <fastrgv@gmail.com>
+Open source Ada developers are welcome to help improve or extend this app.
+Developer or not, send comments, suggestions or questions to:
+fastrgv@gmail.com
+
 
 
 
