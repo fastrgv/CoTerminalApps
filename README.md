@@ -316,6 +316,9 @@ There are NO other 3rd party libraries or tools required to build.
 * pure minimalism:  no graphics, just colored ASCII characters, keyboard, & sound;
 
 
+If you make improvements, please send then to <fastrgv@gmail.com>
+
+
 
 
 ===============================================================
