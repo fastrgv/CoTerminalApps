@@ -68,7 +68,16 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 ===============================================================
 ## Introduction
 
-CoTerminalApps is a portable collection of non-graphical, colored-ascii-character puzzles & games with sound that run in a commandline terminal on Windows, OS-X and Gnu/Linux.
+CoTerminalApps is a portable collection of non-graphical, colored-ascii-character puzzles & games with sound that run in a commandline terminal on Windows, OS-X and Gnu/Linux. Includes SpaceInvaders, Pacman & Frogger.
+
+-----------------------------------------------------------
+Featuring
+
+	* no installation
+	* no dependencies (Ncurses not needed)
+	* simply unzip in your Downloads directory, and run;
+	* or unzip onto a USB flash drive [w/same file format] and run.
+-----------------------------------------------------------
 
 The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
