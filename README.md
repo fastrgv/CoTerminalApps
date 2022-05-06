@@ -28,10 +28,16 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 
 
-# CoTerminalApps with OpenAL Sound
+
+FSF link:
+https://sourceforge.net/projects/coterminalapps/upload/23dec2021/
+
+
+# CoTerminalApps with OpenAL Sound, SpaceInvaders, Frogger, Pacman
 
 
 ## What is new:
+
 
 **ver 2.4.0 -- 23dec21**
 
@@ -39,31 +45,10 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 * All "assets", including datafiles & soundfiles, now have licenses compatible with the GPLv3 license.
 
 **ver 2.3.9 -- 05nov21**
+
 * Added example script to build using Gnu/Gnat.
 * Refined libraries and build scripts.
-* Replaced libgnatcoll.a with one downloaded from GitHub.
-* 
-**ver 2.3.7 -- 18oct21**
-
-* Besides Win64, I now provide a Win32 build, to support older platforms.
-
-* Elliminated anomalous clutter in nexus selection app;
-* Arcade-games now pause to show stats before returning to nexus.
-
-**ver 2.3.6 -- 07oct21**
-* SpaceInvaders:
-	* New red aliens shape.
-
-
-**ver 2.3.5 -- 06oct21**
-* SpaceInvaders:
-	* New UFO shape; new alien shapes; aliens harder to hit.
-
-**ver 2.3.4 -- 29sep21**
-* SpaceInvaders:
-	* New UFO sound (less annoying);
-	* More aliens (11 across, like original).
-
+* Replaced libgnatcoll.a with one from GitHub.
 
 ===============================================================
 ## Introduction
@@ -81,13 +66,13 @@ Featuring
 
 The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
-Windows version has runtime-priority control of console terminal.
+Windows versions use runtime-priority control for arcade-level response.
 
-Rebuildable using the free AdaCore GNAT Ada compiler.  
+Rebuildable using the free AdaCore Ada compiler or GnuAda(Gnat)
 
-Includes rpn(calculator), cinv(SpaceInvaders), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama);
+Includes cinv(SpaceInvaders), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama), rpn(calculator).
 
-See a visual of the 10 puzzles in the image "./puzzles.png".
+See the image "./puzzles.png" for a visual of the 10 puzzzles.
 
 Usable keys for all:
 
@@ -97,11 +82,10 @@ Usable keys for all:
 
 All puzzles & games can be called directly from the command line; e.g.
 
-* bin\win\cpac.exe
+* bin\win\cpac.exe	(from base dir)
+* cpac.exe				(from ~\bin\win\ dir)
 
-but it is more convenient to use the selector app.
-
-All puzzles & games can now be launched from the selector apps:
+but it is more convenient to use the selector app, thusly:
 
 * winterm.bat			(Win64)
 * w32term.bat			(Win32)
@@ -110,13 +94,13 @@ All puzzles & games can now be launched from the selector apps:
 
 Use the keyboard arrow keys to highlight the desired game, then press the (enter)-key.
 
-Windows users note: Using linux executables under WSL [Windows Subsystem for Linux] is not supported. Instead, you should use the windows versions [initiated by winterm.bat] because extraordinary measures have been taken to achieve arcade-level response under Windows.
+Windows users note: Using linux executables under WSL [Windows Subsystem for Linux] is not supported. Instead, you should use the windows versions because extraordinary measures have been taken to achieve arcade-level response.
 
-Similarly, linux users cannot use wine to run the Windows executables.
+Similarly, linux users cannot use wine to run Windows executables.
 
 
 ### For Maximal Enjoyment...
-Keyboard setup is important.  You should have a short key-delay and fast repeat rate setting. 
+Keyboard setup is important.  You should have a very short key-delay and fast repeat rate setting when running the arcade games. The normal settings are fine for puzzles.
 
 Screen setup is important, too. Terminal sizes required:
 * pacman:	60x40
@@ -124,7 +108,7 @@ Screen setup is important, too. Terminal sizes required:
 * Invaders:	80x30
 * others:	60x25
 
-It is recommended to resize your terminal window; then enlarge the font until the window just barely fits your computer screen.
+It is recommended to resize your terminal window, per the above table; then enlarge the font until the window just barely fits your computer screen.
 
 ===========================================================================
 
@@ -150,8 +134,10 @@ The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys q
 Includes executables and source code.  Note that this game does NOT require an ncurses library in your environment.
 
 cpac can be given 2 optional command line parameters:
-	.) game speed 0..9; 0=slow, 5=default=medium, 9=fast;
-	.) ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast.
+
+	* game speed 0..9; 0=slow, 5=default=medium, 9=fast;
+	* ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast.
+
 If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin/osx" or "cd bin\win", first.
 
 Before running cpac, it is recommended to resize your terminal to 60 chars. wide by 40 lines tall; then, perhaps, enlarge the font.
@@ -161,11 +147,11 @@ Before running cpac, it is recommended to resize your terminal to 60 chars. wide
 ### Frogger (cfrog)
 Terminal frogger is a kid friendly ascii character version of Frogger that plays in a commandline terminal.  Pure minimalism with classic sounds and three levels.
 
-@@@@ is a raft of lillypads, 
-QQQQ is a team of turtles, 
-==== is a log, 
-TTT is a truck, 
-ccc is a car.
+* @@@@ is a raft of lillypads, 
+* QQQQ is a team of turtles, 
+* ==== is a log, 
+* TTT is a truck, 
+* ccc is a car.
 
 Runs on Windows, OSX & Linux.
 
@@ -240,7 +226,7 @@ the key mapping follows:
 ### CoTerminal-sokoban (csok.adb)
 There are now two character sets possible that are toggled with the (c)-key.
 
-Move the pusher ( >< or @ ) with the arrow keys in order to push all the boxes ( [] or $ ) onto the goals ( :: or . ) in which case they look like ( {} or asterisk ).  Various other functions available on the help screen.  Includes a very large family of puzzle files.
+Move the pusher ( <> or @ ) with the arrow keys in order to push all the boxes ( [] or $ ) onto the goals ( :: or . ) in which case they look like ( {} or asterisk ).  Various other functions available on the help screen.  Includes a very large family of puzzle files.
 
 Three [external] sokoban solvers named iplr3r, ibox3r, & hbox4  are available.  The command line is "solver-name puzzle-file-name level-number-to-solve".  The solvers print solution-strings to the terminal screen.
 
@@ -261,6 +247,9 @@ A cult classic.  Recalls the HP rpn functionality. As a bonus, this version uses
 ===============================================================
 ## Setup & Running:
 
+CoterminalApps is a stand-alone application.
+Ncurses is NOT needed; there are no prerequisites.
+
 Mac users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
@@ -271,69 +260,77 @@ Open a commandline terminal, and cd to the game directory.
 
 Ensure your keyboard has a short key-delay and fast repeat.
 
-Minimize the size of your terminal window.  Your terminal must be 80 chars wide by 30 lines for SpaceInvaders, 60 by 40 lines for pacman, and smaller for others.  So 80 by 40 should work for all.
+Minimize the size of your terminal window:
 
-Enlarge the Font so that the window fills your monitor.
+* pacman:	60x40
+* frogger:	56x21
+* Invaders:	80x30
+* others:	60x25
+
+Then enlarge the Font so that the window fills your monitor.
 
 To launch the game selector App, depending on your system, type:
 
-winterm.bat (win64)
-or
-w32term.bat (win32)
-
-or
-macterm.sh
-
-or
-gnuterm.sh
+* w64term.bat (win64)
+* w32term.bat (win32)
+* macterm.sh (OSX)
+* gnuterm.sh (linux)
 
 Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
 
-The prebuilt linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you would need to rebuild (see below).
 
-[deleted wine comments]
 
 ### OSX caveat
 The prebuilt OSX executables require version 10.13 (sep2017) or newer.
 
 ===========================================================================
 ## Compiler Scripts
-There are four scripts, w[32]buildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  Now with so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place.
+There are four scripts, w[32]buildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  With so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place, particularly since windows needs colocated DLLs.
+
+These build scripts work for AdaCore Ada [with its own g++].
+See ./alternateBuildScripts/ for more examples. GNU-Ada works too with slight script changes.
+
 
 
 ===============================================================
 ## Build Instructions:
 Remember that prebuilt executables are already included. But, if you want or need to rebuild...
 
-Manually install GNAT GPL from libre.adacore.com/download/ along with "gnatcoll", its companion library.  If you don't like my key-mappings, edit the code as you like.
+Manually install Ada from adacore.com/download/ along with "gnatcoll", its companion library.  If you don't like my key-mappings, edit the code as you like.
 
-Next, edit the scripts wcmp.bat or lcmp.sh or ocmp.sh so that the path to gnatmake is correct.  These scripts streamline the build process by allowing auxilliary files to be neatly hidden in subdirectories.  And make sure it is executable.
+Next, edit the scripts wcmp.bat or lcmp.sh or ocmp.sh so that the path to gnatmake is correct.  These scripts streamline the build process by allowing auxilliary files to be neatly hidden in subdirectories.
 
-Then type "[wlo]buildall" to create new command-line executables for your system. ( w for Windows, l for Linux, o for OSX). Note that on OSX, you must have the Apple-Xcode g++ compiler present in order to rebuild.
+Then type "[wlo]buildall" to create new command-line executables for your system. ( w for Windows, l for Linux, o for OSX). 
+
+Note: ./alternateBuildScripts/GNocmp.sh shows how to build on OSX without Xcode.
 
 There are NO other 3rd party libraries or tools required to build.
 
 
-===============================================================
+### Linux builds using GNU-Compiler-Collection-GNAT
+See ~/alternateBuildScripts/gcmp*.sh.
 
-## What is special about this project?...freedom...portability:
-* uses the [freely-available] Ada programming language & GNAT GPL;
+
+---------------------------------------------------------------
+
+## What is special about this project?...freedom...portability
+
+* uses the [freely-available] Ada programming language;
 * runs on Macs running OSX, or PCs running Windows or Linux;
 * uses only free open source software [F.O.S.S] tools & libraries;
 * portable, transparent code, easy to modify, rebuild;
 * uses a cross-platform implementation of OpenAL-Audio, adaptable by any Ada application that needs sounds & music-loops with a simple interface.
 * pure minimalism:  no graphics, just colored ASCII characters, keyboard, & sound;
-
+* Ncurses is <u>not</u> required.
 
 Open source Ada developers are welcome to help improve or extend this app.
 Developer or not, send comments, suggestions or questions to:
 fastrgv@gmail.com
 
 
+---------------------------------------------------------------
 
 
-
-===============================================================
 ## License:
 
 CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
@@ -363,18 +360,29 @@ Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, af
 Sebastian Gutsfeld [segoh@gmx.net]  & Alexander Hollinger [alexander.hollinger@gmx.net] for the C-version of nInvaders (v0.1.1), after which this Ada version was modelled (gnu gpl).
 
 ----------------------------------------------
-### SoundFiles [x.wav]
-Fanfare/Applause and UFO sounds are from freesound.org and are covered by the Creative Commons CC0 license. Others from 
+### SoundFiles (wav)
+Fanfare/Applause and UFO sounds are from freesound.org and are covered by the Creative Commons CC0 Public License documented in the accompanying file ./docs/creativeCommonsCC0.txt. A few have a CC-by-3.0 license and are accompanied by a text file with the attribution.
+
+Others from 
 * classicgaming.cc/classics/pac-man/sounds
 * classicgaming.cc/classics/frogger/sounds
-(also CreativeCommons).
+(also CreativeCommons cc0).
+The remaining sounds are public domain.
+See also: ./sounds/licenses-sound-data.txt.
+
+It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed ASAP, eg a CC-by-NC license is NOT GPL compatible.
+
+
 
 
 ----------------------------------------------
-## Best Download Site for all my games:
+## Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
-or
+https://www.indiedb.com/members/fastrgv/games
+https://fastrgv.itch.io
 https://sourceforge.net/u/fastrgv/profile/
+https://gamejolt.com/@fastrgv/games
+
 
 ## Video BlockSlider Autosolve:
 https://youtu.be/dD3VGbXv3ng
@@ -382,12 +390,33 @@ https://youtu.be/dD3VGbXv3ng
 --------------------------------------------------
 ## Some Earlier Revision History:
 
+**ver 2.3.8 -- 21oct21**
+* Besides Win64, there is now a Win32 build, to support older platforms.
+* Improved adaOpenAL binding code.
+
+**ver 2.3.7 -- 18oct21**
+* Eliminated anomalous clutter in nexus selection app;
+* Arcade-games now pause to show stats before exitting.
+
+**ver 2.3.6 -- 07oct21**
+* SpaceInvaders:
+	* New red aliens shape.
+
+**ver 2.3.5 -- 06oct21**
+* SpaceInvaders:
+	* New UFO shape; new alien shapes; aliens harder to hit.
+
+**ver 2.3.4 -- 29sep21**
+* SpaceInvaders:
+	* New UFO sound (less annoying);
+	* More aliens (11 across, like original).
+
+
 **ver 2.3.3 -- 28sep21**
 * SpaceInvaders:
 	* Improved logic to eliminate color errors;
 	* Added high-valued, bidirectional UFO.
 	* Made first level easier; higher levels harder.
-
 
 **ver 2.3.2 -- 26sep21**
 * SpaceInvaders Improvements:
@@ -395,7 +424,6 @@ https://youtu.be/dD3VGbXv3ng
 	* added gameover sound.
 	* added checks to assure screen-draws are synched with motions.
 	* added final screen-clear to play nicely with selection app.
-
 
 **ver 2.3.1 -- 24sep21**
 * SpaceInvaders Improvements:
@@ -415,7 +443,6 @@ https://youtu.be/dD3VGbXv3ng
 * csok: added o-key to restart puzzle.
 * added c9r, reverse-mode c9.
 * improved help messages.
-
 
 **ver 2.2.3 -- 10mar21**
 * c7,c9,caz now have solvers & improved screens.
@@ -437,10 +464,8 @@ https://youtu.be/dD3VGbXv3ng
 * Simplified build process & coding;
 * Pacman background music now restored.
 
-
 **ver 2.1.0 -- 26oct20**
 * Improved UI for RPN-calc.
-
 
 **ver 2.0.4 -- 22sep20**
 * Game-launcher now allows (return)-key to select, uses improved colors.
