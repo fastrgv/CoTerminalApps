@@ -29,10 +29,6 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 
 
-FSF link:
-https://sourceforge.net/projects/coterminalapps/upload/23dec2021/
-
-
 # CoTerminalApps with OpenAL Sound, SpaceInvaders, Frogger, Pacman
 
 
