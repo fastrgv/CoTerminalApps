@@ -57,7 +57,7 @@ Featuring
 	* no installation
 	* no dependencies (Ncurses not needed)
 	* simply unzip in your Downloads directory, and run;
-	* or unzip onto a USB flash drive [w/same file format] and run.
+	* or unzip onto a USB flash drive formatted to match your system, and run.
 -----------------------------------------------------------
 
 The proper command to extract the archive and maintain the directory structure is "7z x filename".
