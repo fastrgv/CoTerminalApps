@@ -34,6 +34,11 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 ## What is new:
 
+**ver 2.4.1 -- 16sep22**
+
+* Removed Win64 build.
+* Now using GNU Ada rather than defunct AdaCore compiler.
+
 
 **ver 2.4.0 -- 23dec21**
 
