@@ -286,7 +286,7 @@ The prebuilt OSX executables require version 10.13 (sep2017) or newer.
 
 ===========================================================================
 ## Compiler Scripts
-There are four scripts, w[32]buildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  With so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place, particularly since windows needs colocated DLLs.
+There are four scripts, winbuildall.bat & w64buildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  With so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place, particularly since windows needs colocated DLLs.
 
 These build scripts work for AdaCore Ada [with its own g++].
 See ./alternateBuildScripts/ for more examples. GNU-Ada works too with slight script changes.
