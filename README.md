@@ -34,6 +34,11 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 ## What is new:
 
+**ver 2.5.0 -- 20sep2022**
+
+* Restored Win64 build, now using MSYS2 & mingw64 on Windows.
+
+
 **ver 2.4.1 -- 16sep22**
 
 * Removed Win64 build.
