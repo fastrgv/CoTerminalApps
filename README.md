@@ -34,6 +34,14 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 ## What is new:
 
+
+**ver 2.5.1 -- 26sep2022**
+
+* Simplified Win64 build; using new stand-alone GNU Ada compiler.
+* Removed Win32 build because embedded sokoban solvers need maximal memory.
+* Removed all gnatcoll libraries by compiling from source the tiny subset needed.
+
+
 **ver 2.5.0 -- 20sep2022**
 
 * Restored Win64 build, now using MSYS2 & mingw64 on Windows.
