@@ -12,8 +12,7 @@ Retro Ascii Character Games that run in a color-capable terminal on Windows, OSX
 
 Grab the large file under "release...latest" for all source and data, or try this link:
 
-
-https://github.com/fastrgv/CoTerminalApps/releases/download/v2.5.1/co26sep22.7z
+https://github.com/fastrgv/CoTerminalApps/releases/download/v2.5.2/co22oct22.7z
 
 
 then type "7z x filename.7z" to extract the archive.
