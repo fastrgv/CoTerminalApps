@@ -30,92 +30,81 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 
 
-# CoTerminalApps with OpenAL Sound, SpaceInvaders, Frogger, Pacman
 
 
-## What is new:
+
+# CoTerminalApps with Sound, including SpaceInvaders, Frogger, Pacman
 
 
-**ver 2.5.1 -- 26sep2022**
-
-* Simplified Win64 build; using new stand-alone GNU Ada compiler.
-* Removed Win32 build because embedded sokoban solvers need maximal memory.
-* Removed all gnatcoll libraries by compiling from source the tiny subset needed.
+## What's new:
 
 
-**ver 2.5.0 -- 20sep2022**
+**ver 2.5.2 -- 22oct2022**
 
-* Restored Win64 build, now using MSYS2 & mingw64 on Windows.
-
-
-**ver 2.4.1 -- 16sep22**
-
-* Removed Win64 build.
-* Now using GNU Ada rather than defunct AdaCore compiler.
+* Added 16 annoying block sliders that are small, yet quite challenging.
+* Improved traffic-rush by presenting puzzles in order, from easy to hard;
+* Similarly improved Klotski-sliders by sorting puzzles from easy to hard; also added Quzzle, Quzzle-Killer puzzles near the difficult end of the scale.
+* Improved documentation.
 
 
-**ver 2.4.0 -- 23dec21**
-
-* Updated gnatcoll libraries on OSX & w32; removed unused libgpr.a.
-* All "assets", including datafiles & soundfiles, now have licenses compatible with the GPLv3 license.
-
-**ver 2.3.9 -- 05nov21**
-
-* Added example script to build using Gnu/Gnat.
-* Refined libraries and build scripts.
-* Replaced libgnatcoll.a with one from GitHub.
 
 ===============================================================
 ## Introduction
 
-CoTerminalApps is a portable collection of non-graphical, colored-ascii-character puzzles & games with sound that run in a commandline terminal on Windows, OS-X and Gnu/Linux. Includes SpaceInvaders, Pacman & Frogger.
+CoTerminalApps is a highly portable collection of non-graphical, ascii-character puzzles & games with sound that run in a commandline terminal on Windows, OS-X and Gnu/Linux. Includes SpaceInvaders, Pacman & Frogger.
 
 -----------------------------------------------------------
 Featuring
 
 	* no installation
 	* no dependencies (Ncurses not needed)
-	* simply unzip in your Downloads directory, and run;
-	* or unzip onto a USB flash drive formatted to match your system, and run.
+	* simply unzip in your Downloads directory, or any other writeable directory, and run;
+	* or unzip onto a USB flash drive [w/same file format] and run.
 -----------------------------------------------------------
 
-The proper command to extract the archive and maintain the directory structure is "7z x filename".
+The 7zip command to extract the archive and maintain the directory structure is "7z x filename".
 
-Windows versions use runtime-priority control for arcade-level response.
+* Windows versions use runtime-priority control for arcade-level response.
 
-Rebuildable using the free AdaCore Ada compiler or GnuAda(Gnat)
+Rebuildable using the free GNU Ada compiler, even on OSX.
 
-Includes cinv(SpaceInvaders), cpac(Pacman), cfrog(Frogger) and 10 puzzle games that use ascii characters only:  crush(rush-hour), cslid(klotski), c7(flat7), caz(flatAZ), csok(sokoban), chio(hole-in-one), chio4(hole-in-one+4), c9(nine), cdd(dirty-dozen), cpan(panama), rpn(calculator).
+Includes 3 retro arcade games: SpaceInvaders, Pacman, Frogger as well as 10 puzzle games that use ascii characters only:  rush-hour, klotski, flat7, flatAZ, sokoban, hole-in-one, hole-in-one+4, nine, dirty-dozen, panama, annoying-sliders, rpn-calculator.
 
-See the image "./puzzles.png" for a visual of the 10 puzzzles.
+See the image "./puzzles.png" for a visual of the 10 available puzzzles.
+
+* Two of these puzzles, Flat7 & FlatAZ, are my own creations. They are 2-dimensional versions of my 3D, OpenGL "Rufas Cube" puzzles, available at:  https://sourceforge.net/projects/rufascube/
 
 Usable keys for all:
 
-* arrow-keys or WASD or IJKL for movement;
+* arrow-keys for movement; (see ~/docs/KeyboardMoves.txt)
+* in some games you can also use wasd, ijkl for moves.
 * (q)=quit
 * (?)=help toggle
 
 All puzzles & games can be called directly from the command line; e.g.
 
-* bin\win\cpac.exe	(from base dir)
-* cpac.exe				(from ~\bin\win\ dir)
+* bin\w64\cpac.exe	(from base dir)
+* cpac.exe				(from ~\bin\w64\ dir)
 
 but it is more convenient to use the selector app, thusly:
 
-* winterm.bat			(Win64)
-* w32term.bat			(Win32)
+* w64term.bat			(Win64)
 * macterm.sh			(Mac/OSX)
 * gnuterm.sh			(linux)
 
 Use the keyboard arrow keys to highlight the desired game, then press the (enter)-key.
 
-Windows users note: Using linux executables under WSL [Windows Subsystem for Linux] is not supported. Instead, you should use the windows versions because extraordinary measures have been taken to achieve arcade-level response.
+* Windows users note: Using linux executables under WSL [Windows Subsystem for Linux] is not supported. Instead, you should use the windows versions because extraordinary measures have been taken to achieve arcade-level response.
 
-Similarly, linux users cannot use wine to run Windows executables.
+* Similarly, linux users cannot use wine to run Windows executables, with this particular App.
+
+* Many of these 2D slider puzzles are also available in OpenGL-graphical form at: https://sourceforge.net/projects/rufasslider/
+
+* Also using OpenGL graphics, I have created some 3D slider puzzles that run on Windows, OS-X, and Linux. It is available at: https://sourceforge.net/projects/reliquarium/
 
 
 ### For Maximal Enjoyment...
-Keyboard setup is important.  You should have a very short key-delay and fast repeat rate setting when running the arcade games. The normal settings are fine for puzzles.
+Keyboard setup can be very important for playability.  You should have a very short key-delay and fast repeat rate setting when running the arcade games. The normal settings are fine for puzzles.
 
 Screen setup is important, too. Terminal sizes required:
 * pacman:	60x40
@@ -128,11 +117,9 @@ It is recommended to resize your terminal window, per the above table; then enla
 ===========================================================================
 
 ### CoTerminal-Space-Invaders (cinv.adb)
-This is my translation of nInvaders.c into Ada that has SOUND !!!
+This is my translation of nInvaders.c into Ada, but with SOUND !!!
 
 You need only the (space)-key to fire your laser gun and the left/right arrow keys [or a-key/d-key] to move out of the way of the alien missiles. The terminal window must be at least 80-chars wide x 30-lines. There are no command-line options, but difficulty increases with level.
-
-Note that this app is still under active development & improvement.  So be sure to check back for the latest update. Nevertheless, it is playable and fun.
 
 
 ### Pacman (cpac)
@@ -148,12 +135,12 @@ The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys q
 
 Includes executables and source code.  Note that this game does NOT require an ncurses library in your environment.
 
-cpac can be given 2 optional command line parameters:
+When run directly, cpac can be given 2 optional command line parameters:
 
 	* game speed 0..9; 0=slow, 5=default=medium, 9=fast;
 	* ghost speed 0..9; 0=stopped, 2=default=easy, 9=fast.
 
-If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin/osx" or "cd bin\win", first.
+If you want to try non-default values for these params, you need to run directly from the directory of the executable. To do this: "cd bin/gnu" or "cd bin/osx" or "cd bin\w64", first.
 
 Before running cpac, it is recommended to resize your terminal to 60 chars. wide by 40 lines tall; then, perhaps, enlarge the font.
 
@@ -170,7 +157,7 @@ Terminal frogger is a kid friendly ascii character version of Frogger that plays
 
 Runs on Windows, OSX & Linux.
 
-Keyboard setup is important.  You should have a short key-delay and fast repeat setting.  
+Keyboard setup is important.  You should have a short key-delay and fast repeat setting.
 
 The arrow keys, or wasd-keys, or ijkl-keys control movement.  The (x),(q) keys quit.
 
@@ -188,18 +175,23 @@ Horizontal and vertical strings of letters represent cars and trucks in a crowde
 
 A stand alone autosolver, bfsr, is provided, but now, an autosolver is embedded into this game.  At any time you may press the (=)-key to begin stepping toward a solution.
 
+I created about 20% of these rush-puzzles (filenames that end "my.rush"), including the most difficult one "zzzz_89my.rush".
 
-### CoTerminal-BlockSlide (cslid.adb), CoTerminal-DirtyDozen (cdd.adb)
+
+
+### BlockSlide (cslid.adb), DirtyDozen (cdd.adb), Annoying (cann.adb)
 Colored, non-graphical Block Slider puzzle games designed to run in a terminal window.
 
-Colored blocks of letters can be moved horizontally or vertically wherever there is space.  The objective is to move the red block to a specified goal position.
+Colored blocks of letters can be moved horizontally or vertically wherever there is space.  Often, the objective is to move the red block to a specified goal position. Sometimes the goal is to swap the positions of two blocks.
 
 A stand alone autosolver, bfsl, is provided, but now, an autosolver is embedded into these games.  At any time you may press the (=)-key to begin stepping toward a solution.
 
+Cann has no autosolver; and you must type "0" to restart it.
 
-### Gameplay: crush, cslid
+### Gameplay: crush, cslid, cann (annoying-sliders)
 
-"?" toggles the help screen.  The "+" and "-" keys (next, previous) are used to cycle through the large number of predefined puzzles.  You can reset a puzzle by typing "r". You can autosolve by typing "=".
+"?" toggles the help screen.  The "+" and "-" keys (next, previous) are used to cycle through the large number of predefined puzzles.  You can reset a puzzle by typing "r". You can autosolve by typing "=", except for cann. 
+
 
 First, one selects a vehicle or block by typing its identifier letter.  Then use the arrow keys to move it.  Note that manual selection is not always necessary, as there is an auto-select mechanism for those times when only one selection may move in a given direction.  
 
@@ -207,9 +199,12 @@ First, one selects a vehicle or block by typing its identifier letter.  Then use
 ===============================================================
 ### Seven, A2Z (c7.adb, caz.adb)
 
-c7 is a flat representation of a 3D 2x2x2 cube with one cubelet missing that allows sliding permutations.  Here, the elements are labelled 1..7.
+c7 (flat7) is a flat representation of a 3D 2x2x2 cube with one cubelet missing that allows sliding permutations.  There are two 2x2 layers. Here, the elements are labelled 1..7.
 
-caz is a flat representation of a 3x3x3 cube with one cubelet missing that allows sliding permutations.  The elements are labelled with the english alphabet.
+caz (flatAZ) is a flat representation of a 3x3x3 cube with one cubelet missing that allows sliding permutations.  Here, there are three 3x3 layers. The elements are labelled with the english alphabet.
+
+Flat7 & FlatAZ, are my own creations. They are 2-dimensional versions of my 3D, OpenGL "Rufas Cube" puzzles, available at:  https://sourceforge.net/projects/rufascube/
+
 
 Both the "caz" and "c7" puzzles work the same:
 
@@ -220,17 +215,15 @@ Both the "caz" and "c7" puzzles work the same:
 A character in an adjacent row, column, or layer may be moved to the empty space using the keyboard.
 
 Pressing the (home) key on a typical keyboard produces the character 'H'.  So assuming that (home)=>'H', (end)=>'F', (up)=>'A', etc...
-the key mapping follows:
+the KEY MAPPING follows:
 
 * (1)..(5): mix;  higher values are more difficult.
-
-* (up),(i),(w): north
-* (dn),(k),(s): south
-* (rt),(l),(d): east
-* (lt),(j),(a): west
-* (home),(\),(u),(.),(-): layer-up
-* (end),(/),(o),(+): layer-dn
-
+* (up),(lf),(dn),(rt): move north, west, south, east
+* (i),(j),(k),(l): move north, west, south, east
+* (w),(a),(s),(d): move north, west, south, east
+* (home),(end): move up one layer, down one layer
+* (\\),(/): move up one layer, down one layer
+* (-),(+): move up one layer, down one layer
 * (?): help
 * (q): quit
 
@@ -257,7 +250,11 @@ Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 Reverse the order of the numbered blocks with assorted shapes. First version begins with blocks in order. Second begins with blocks in reverse order. Has solver.
 
 ### RPN (reverse polish notation) command line calculator
-A cult classic.  Recalls the HP rpn functionality. As a bonus, this version uses differentials to calculate an error estimate.
+A cult classic.  Recalls the HP rpn functionality. As a bonus, this version uses differentials to calculate an error estimate. No longer accesible through the selector app, one must call it directly, eg.
+
+	* bin\w64\rpn.exe
+	* bin/gnu/rpn
+	* bin/osx/rpn
 
 ===============================================================
 ## Setup & Running:
@@ -273,7 +270,7 @@ The proper command to extract the archive and maintain the directory structure i
 
 Open a commandline terminal, and cd to the game directory.
 
-Ensure your keyboard has a short key-delay and fast repeat.
+Arcade games require your keyboard to have a short key-delay and fast repeat rate.
 
 Minimize the size of your terminal window:
 
@@ -287,11 +284,10 @@ Then enlarge the Font so that the window fills your monitor.
 To launch the game selector App, depending on your system, type:
 
 * w64term.bat (win64)
-* w32term.bat (win32)
 * macterm.sh (OSX)
 * gnuterm.sh (linux)
 
-Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\win and then type "cfrog" to run Frogger.
+Note that any individual app may still be executed from the directory appropriate to your O.S.  For example, on Windows you can CD to bin\w64 and then type "cfrog" to run Frogger.
 
 
 
@@ -300,30 +296,36 @@ The prebuilt OSX executables require version 10.13 (sep2017) or newer.
 
 ===========================================================================
 ## Compiler Scripts
-There are four scripts, winbuildall.bat & w64buildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  With so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place, particularly since windows needs colocated DLLs.
+There are 3 scripts, w64buildall.bat for Windows, lbuildall.sh for Linux, and obuildall.sh for OS-X.  They differ in where the executables are put.  With so many different precompiled binaries for each OS, there would be too much clutter if they were all put into the same place, particularly since windows needs colocated DLLs.
 
-These build scripts work for AdaCore Ada [with its own g++].
-See ./alternateBuildScripts/ for more examples. GNU-Ada works too with slight script changes.
+These build scripts work for GNU Ada [with its own g++].
+See ./alternateBuildScripts/ for more examples.
 
+The latest scripts have elliminated the need to use the "gnatcoll" library simply by compiling from source 3 additional tiny files, a small subset of gnatcoll, that are actually used by CoterminalApps.
 
+Final note:  the latest OSX script does not use Xcode, only GNU Ada & GNU g++.
 
-===============================================================
+==========================================================================
 ## Build Instructions:
 Remember that prebuilt executables are already included. But, if you want or need to rebuild...
 
-Manually install Ada from adacore.com/download/ along with "gnatcoll", its companion library.  If you don't like my key-mappings, edit the code as you like.
 
-Next, edit the scripts wcmp.bat or lcmp.sh or ocmp.sh so that the path to gnatmake is correct.  These scripts streamline the build process by allowing auxilliary files to be neatly hidden in subdirectories.
+To get a recent Ada compiler;  eg. GNU-Ada...try this source:
 
-Then type "[wlo]buildall" to create new command-line executables for your system. ( w for Windows, l for Linux, o for OSX). 
+https://github.com/alire-project/GNAT-FSF-builds/releases
 
-Note: ./alternateBuildScripts/GNocmp.sh shows how to build on OSX without Xcode.
+
+Manually install GNU Ada.  If you don't like my key-mappings, edit the code as you like.
+
+Next, edit the scripts w64cmp.bat, lcmp.sh or ocmp.sh so that the path to gnatmake is correct.  These scripts streamline the build process by allowing auxilliary files to be neatly hidden in subdirectories.
+
+Windows users please read gnuAdaOnWindows.txt.
+
+Then type "[w64/l/o]buildall" to create new command-line executables for your system. ( w64 for Windows, l for Linux, o for OSX). 
 
 There are NO other 3rd party libraries or tools required to build.
 
 
-### Linux builds using GNU-Compiler-Collection-GNAT
-See ~/alternateBuildScripts/gcmp*.sh.
 
 
 ---------------------------------------------------------------
@@ -350,7 +352,7 @@ fastrgv@gmail.com
 
 CoTerminalApps is covered by the GNU GPL v3 as indicated in the sources:
 
- Copyright (C) 2021  <fastrgv@gmail.com>
+ Copyright (C) 2022  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -374,6 +376,9 @@ Mike Billars [michael@gmail.com] for his C-version of Pacman for the console, af
 
 Sebastian Gutsfeld [segoh@gmx.net]  & Alexander Hollinger [alexander.hollinger@gmx.net] for the C-version of nInvaders (v0.1.1), after which this Ada version was modelled (gnu gpl).
 
+Nick Baxter, J.H.Conway, Jim Lewis, Bob Henderson, Gil Dogon, Ed Pegg Jr., J.I. Wiley, J.H. Fleming, C. L. Diamond, Sam Loyd, H. E. Dudeney, E. B. Escott, Nob Yoshigahara, James W. Stephens for the classic sliders.
+
+
 ----------------------------------------------
 ### SoundFiles (wav)
 Fanfare/Applause and UFO sounds are from freesound.org and are covered by the Creative Commons CC0 Public License documented in the accompanying file ./docs/creativeCommonsCC0.txt. A few have a CC-by-3.0 license and are accompanied by a text file with the attribution.
@@ -391,19 +396,43 @@ It is my intention to use media with copyrights or licenses that are compatible 
 
 
 ----------------------------------------------
-## Download Site for all my games:
-https://github.com/fastrgv?tab=repositories
-https://www.indiedb.com/members/fastrgv/games
-https://fastrgv.itch.io
-https://sourceforge.net/u/fastrgv/profile/
-https://gamejolt.com/@fastrgv/games
+## Download Sites for all my games:
+* https://github.com/fastrgv?tab=repositories
+* https://www.indiedb.com/members/fastrgv/games
+* https://fastrgv.itch.io
+* https://sourceforge.net/u/fastrgv/profile/
+* https://gamejolt.com/@fastrgv/games
 
 
 ## Video BlockSlider Autosolve:
-https://youtu.be/dD3VGbXv3ng
+* https://youtu.be/dD3VGbXv3ng
 
 --------------------------------------------------
 ## Some Earlier Revision History:
+
+
+**ver 2.5.1 -- 26sep2022**
+
+* Simplified Win64 build; using new stand-alone GNU Ada compiler.
+* Removed Win32 build because embedded sokoban solvers need maximal memory.
+* Removed all gnatcoll libraries by compiling from source the tiny subset needed.
+
+**ver 2.5.0 -- 20sep2022**
+* Restored Win64 build, now using MSYS2 & mingw64 on Windows.
+* Still deliver Win32 build, also.
+
+**ver 2.4.1 -- 16sep22**
+* Removed Win64 build.
+* Now using GNU Ada rather than defunct AdaCore compiler.
+
+**ver 2.4.0 -- 23dec21**
+* Updated gnatcoll libraries on OSX & w32; removed unused libgpr.a.
+* All "assets", including datafiles & soundfiles, now have licenses compatible with the GPLv3 license.
+
+**ver 2.3.9 -- 05nov21**
+* Added example script to build using Gnu/Gnat.
+* Refined libraries and build scripts.
+* Replaced libgnatcoll.a with one from GitHub.
 
 **ver 2.3.8 -- 21oct21**
 * Besides Win64, there is now a Win32 build, to support older platforms.
@@ -487,6 +516,7 @@ https://youtu.be/dD3VGbXv3ng
 
 **ver 2.0.3 -- 23jun20**
 * All apps are now launched using a single command.
+
 
 
 
