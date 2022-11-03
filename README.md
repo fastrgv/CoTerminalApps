@@ -29,13 +29,18 @@ SpaceInvadersVideo:  https://www.youtube.com/watch?v=dMA4xA4mqII
 
 
 
-
-
-
 # CoTerminalApps with Sound, including SpaceInvaders, Frogger, Pacman
 
 
 ## What's new:
+
+
+**ver 2.5.3 -- 05nov2022**
+
+* Created & enabled embedded "live" solvers for the annoying-sliders and panama apps.
+* Improved robustness of all embedded solvers.
+* Improved feedback messages in puzzles.
+* Fixed a serious error in the Klotski sliders that caused flickering on Windows.
 
 
 **ver 2.5.2 -- 22oct2022**
@@ -178,22 +183,28 @@ I created about 20% of these rush-puzzles (filenames that end "my.rush"), includ
 
 
 
-### BlockSlide (cslid.adb), DirtyDozen (cdd.adb), Annoying (cann.adb)
+### BlockSliders, DirtyDozen, AnnoyingSliders
 Colored, non-graphical Block Slider puzzle games designed to run in a terminal window.
 
 Colored blocks of letters can be moved horizontally or vertically wherever there is space.  Often, the objective is to move the red block to a specified goal position. Sometimes the goal is to swap the positions of two blocks.
 
-A stand alone autosolver, bfsl, is provided, but now, an autosolver is embedded into these games.  At any time you may press the (=)-key to begin stepping toward a solution.
+A stand alone autosolver, bfsa, is provided, but now, a "live" autosolver is embedded into these games.  At any time you may press the (=)-key to begin stepping toward a solution.
 
-Cann has no autosolver; and you must type "0" to restart it.
+In cann you must type "0" to restart it, since "r" is reserved to mean "red".
+
+For those times when a solution seems impossible, the more difficult puzzle families have an AutoSolver function using the (=)-key to step closer towards the solution:  crush, cslid, cdd, and cann.  
+
+### Advice to improve puzzle-solving skills:  
+Remember that you can **stop** using the autosolvers at any time and try to manually solve the puzzle from a configuration that is a few steps closer to the solution. And because these solvers are "live", you can **resume** using the autosolvers at any time if you get stuck again. Each time you resume, you might need to wait a few seconds for the solver to complete its search.
+
 
 ### Gameplay: crush, cslid, cann (annoying-sliders)
 
-"?" toggles the help screen.  The "+" and "-" keys (next, previous) are used to cycle through the large number of predefined puzzles.  You can reset a puzzle by typing "r". You can autosolve by typing "=", except for cann. 
+"?" toggles the help screen.  The "+" and "-" keys (next, previous) are used to cycle through the large number of predefined puzzles.  You can reset a puzzle by typing "r". You can autosolve by typing "=". 
 
+First, one selects a vehicle or block by typing its identifier letter.  Then use the arrow keys to move it.  Note that **manual selection is, often times, not necessary,** as there is an auto-select mechanism for those times when only one selection may move in a given direction. For example, cpana never needs a selection (and, btw, it can be solved in 26 moves!).
 
-First, one selects a vehicle or block by typing its identifier letter.  Then use the arrow keys to move it.  Note that manual selection is not always necessary, as there is an auto-select mechanism for those times when only one selection may move in a given direction.  
-
+Be aware that move counts for a given puzzle may differ according to how they are counted. Many puzzzlers count a compound move with a single piece as one move. Here, it is not.
 
 ===============================================================
 ### Seven, A2Z (c7.adb, caz.adb)
@@ -221,7 +232,7 @@ the KEY MAPPING follows:
 * (i),(j),(k),(l): move north, west, south, east
 * (w),(a),(s),(d): move north, west, south, east
 * (home),(end): move up one layer, down one layer
-* (\\),(/): move up one layer, down one layer
+* (\\),(/): [backslash=]move up one layer, [forwardslash=]down one layer
 * (-),(+): move up one layer, down one layer
 * (?): help
 * (q): quit
@@ -249,7 +260,7 @@ Move the red 2x2 'a' block into the center of the four L-shaped corner pieces.
 Reverse the order of the numbered blocks with assorted shapes. First version begins with blocks in order. Second begins with blocks in reverse order. Has solver.
 
 ### RPN (reverse polish notation) command line calculator
-A cult classic.  Recalls the HP rpn functionality. As a bonus, this version uses differentials to calculate an error estimate. No longer accesible through the selector app, one must call it directly, eg.
+A cult classic.  Recalls the HP rpn functionality. **As a bonus, this version uses differentials to calculate an error estimate.** No longer accesible through the selector app, one must call it directly, eg.
 
 	* bin\w64\rpn.exe
 	* bin/gnu/rpn
@@ -331,7 +342,7 @@ There are NO other 3rd party libraries or tools required to build.
 
 ## What is special about this project?...freedom...portability
 
-* uses the [freely-available] Ada programming language;
+* uses the Ada programming language and the freely-available GNU compiler.
 * runs on Macs running OSX, or PCs running Windows or Linux;
 * uses only free open source software [F.O.S.S] tools & libraries;
 * portable, transparent code, easy to modify, rebuild;
@@ -389,7 +400,7 @@ Others from
 The remaining sounds are public domain.
 See also: ./sounds/licenses-sound-data.txt.
 
-It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed ASAP, eg a CC-by-NC license is NOT GPL compatible.
+It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed; eg a CC-by-NC license is NOT GPL compatible.
 
 
 
@@ -515,6 +526,7 @@ It is my intention to use media with copyrights or licenses that are compatible 
 
 **ver 2.0.3 -- 23jun20**
 * All apps are now launched using a single command.
+
 
 
 
